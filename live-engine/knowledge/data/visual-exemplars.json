@@ -1,0 +1,21 @@
+[
+  {
+    "id": "VIS-OPENFILM-001",
+    "status": "image-inspected",
+    "sourceTitle": "OpenFilm Studio preview",
+    "sourceUrl": "https://github.com/openfilm/openfilm/blob/main/docs/openfilm-preview.png",
+    "asset": "assets/openfilm-preview.png",
+    "rights": "MIT openfilm/openfilm; source LICENSE in assets/LICENSE_OPENFILM; names and logos remain protected trademarks",
+    "sceneTypes": ["creative-editor"],
+    "pattern": "Desktop editor with focused working region, utility rails, time-based workspace and embedded AI entry",
+    "observed": {
+      "hierarchy": "Central preview is the darkest/largest shape, anchoring the visual focal point; left and right utility panes remain light and secondary.",
+      "layout": "Compact top toolbar, narrow media rail at left, central preview, inspector at right, timeline at bottom, AI composer in lower-right.",
+      "tone": "Almost monochromatic surfaces, subtle separators, modest icons and typography instead of decorative gradients.",
+      "density": "Workspace is highly structured but the empty project uses real contextual empty states, not arbitrary demo content.",
+      "motion": "Not observable from the static screenshot. Do not infer animations or actual working interactions."
+    },
+    "transferToSurfaceLive": "Treat the generated running application as the main subject; place AI input, selection, inspector and export controls around it with quieter visual weight.",
+    "doNotCopy": "Do not copy OpenFilm's exact pane measurements, glyphs, branding or editing workflow; SurfaceLive is a frontend authoring tool, not a film editor."
+  }
+]

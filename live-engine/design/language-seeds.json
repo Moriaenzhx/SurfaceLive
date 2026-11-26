@@ -1,0 +1,986 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "vis-nearby",
+      "kind": "visual-observation",
+      "title": "距离与附近事项标题成对",
+      "citations": [
+        {
+          "sourceId": "nearby",
+          "publisher": "DBrant (WMF)",
+          "url": "https://commons.wikimedia.org/wiki/File:Nearby_in_Android.png"
+        }
+      ],
+      "review": "indexed / Codex (source and pixel review) / 2026-11-20T03:01:16.478Z",
+      "rights": "CC BY-SA 4.0; retain local research copy only; third-party material and marks excluded from reuse.",
+      "scope": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+      "inspectedHash": "a8c97afca30c0bef97d56705baa5dd711e68010bc285952324f074f42fcb2727"
+    },
+    {
+      "id": "TYP-003",
+      "kind": "knowledge-rule",
+      "title": "中文信息流先保证字号与行高的可读性，再使用有限字阶突出标题、距离、时间和主体内容。",
+      "citations": [
+        {
+          "sourceId": "apple-type",
+          "publisher": "Apple",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/typography"
+        },
+        {
+          "sourceId": "wcag-reflow",
+          "publisher": "W3C",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "LAY-001",
+      "kind": "knowledge-rule",
+      "title": "用邻近关系划分信息组：组内更紧，组间更松；先用空间关系，必要时才用边框。",
+      "citations": [
+        {
+          "sourceId": "fluent-layout",
+          "publisher": "Microsoft",
+          "url": "https://fluent2.microsoft.design/layout"
+        },
+        {
+          "sourceId": "nng-hierarchy",
+          "publisher": "Nielsen Norman Group",
+          "url": "https://www.nngroup.com/articles/visual-hierarchy-ux-definition/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "MOT-002",
+      "kind": "knowledge-rule",
+      "title": "卡片展开、面板切换、元素重排要保持对象连续性，避免瞬间跳变打断空间理解。",
+      "citations": [
+        {
+          "sourceId": "material-motion",
+          "publisher": "Google",
+          "url": "https://m2.material.io/design/motion/understanding-motion/"
+        },
+        {
+          "sourceId": "motion-layout",
+          "publisher": "Motion",
+          "url": "https://motion.dev/docs/layout-animations"
+        },
+        {
+          "sourceId": "carbon-motion",
+          "publisher": "IBM",
+          "url": "https://v10.carbondesignsystem.com/guidelines/motion/choreography/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "FRM-003",
+      "kind": "knowledge-rule",
+      "title": "缩短首次提交所需字段，按自然完成顺序组织，并明确每个字段存在的理由。",
+      "citations": [
+        {
+          "sourceId": "baymard-form",
+          "publisher": "Baymard Institute",
+          "url": "https://baymard.com/blog/form-design"
+        },
+        {
+          "sourceId": "govuk-validation",
+          "publisher": "GOV.UK",
+          "url": "https://design-system.service.gov.uk/patterns/validation/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "FRM-001",
+      "kind": "knowledge-rule",
+      "title": "错误贴近输入字段并明确指出修复方式；复杂表单提供可导航的错误汇总。",
+      "citations": [
+        {
+          "sourceId": "govuk-error",
+          "publisher": "GOV.UK",
+          "url": "https://design-system.service.gov.uk/components/error-message/"
+        },
+        {
+          "sourceId": "govuk-summary",
+          "publisher": "GOV.UK",
+          "url": "https://design-system.service.gov.uk/components/error-summary/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "FDB-002",
+      "kind": "knowledge-rule",
+      "title": "等待期间保留页面结构和交互上下文；按加载时长选择骨架屏、局部进度和渐进展示。",
+      "citations": [
+        {
+          "sourceId": "carbon-loading",
+          "publisher": "IBM",
+          "url": "https://www.carbondesignsystem.com/building-blocks/core/patterns/loading"
+        },
+        {
+          "sourceId": "atlassian-components",
+          "publisher": "Atlassian",
+          "url": "https://atlassian.design/components/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "ACC-001",
+      "kind": "knowledge-rule",
+      "title": "键盘焦点须可见且与背景区分，不以鼠标专属 hover 承载关键功能。",
+      "citations": [
+        {
+          "sourceId": "wcag-focus",
+          "publisher": "W3C",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance"
+        },
+        {
+          "sourceId": "aria-keyboard",
+          "publisher": "W3C",
+          "url": "https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "vis-gnucash",
+      "kind": "visual-observation",
+      "title": "主记录与明细共用比较列",
+      "citations": [
+        {
+          "sourceId": "gnucash",
+          "publisher": "Deeahbz / Remember the dot",
+          "url": "https://commons.wikimedia.org/wiki/File:GnuCash_screenshot.png"
+        }
+      ],
+      "review": "indexed / Codex (source and pixel review) / 2026-11-20T03:01:15.392Z",
+      "rights": "GPL-2.0-or-later; retain local research copy only; third-party material and marks excluded from reuse.",
+      "scope": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+      "inspectedHash": "efa676835e9d6bde0b3edde9f9c4cf93b3bb5395c5255b0666fe64ae7c0b3c66"
+    },
+    {
+      "id": "HIE-003",
+      "kind": "knowledge-rule",
+      "title": "让候选人匹配度、关键缺口、下一步行动成为信息主轴；其次再展示基础资料。",
+      "citations": [
+        {
+          "sourceId": "nng-hierarchy",
+          "publisher": "Nielsen Norman Group",
+          "url": "https://www.nngroup.com/articles/visual-hierarchy-ux-definition/"
+        },
+        {
+          "sourceId": "uswds-table",
+          "publisher": "USWDS",
+          "url": "https://designsystem.digital.gov/components/table/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "TBL-001",
+      "kind": "knowledge-rule",
+      "title": "结构化多字段记录优先用可排序、可扫描的表格；冻结关键列或提供明细侧栏，而非重复卡片装饰。",
+      "citations": [
+        {
+          "sourceId": "uswds-table",
+          "publisher": "USWDS",
+          "url": "https://designsystem.digital.gov/components/table/"
+        },
+        {
+          "sourceId": "uswds-table-a11y",
+          "publisher": "USWDS",
+          "url": "https://designsystem.digital.gov/components/table/accessibility-tests/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "RSP-002",
+      "kind": "knowledge-rule",
+      "title": "保留桌面工作台的信息密度优势；较窄窗口优先收起次要面板而非将所有表格硬折行。",
+      "citations": [
+        {
+          "sourceId": "fluent-layout",
+          "publisher": "Microsoft",
+          "url": "https://fluent2.microsoft.design/layout"
+        },
+        {
+          "sourceId": "atlassian-grid",
+          "publisher": "Atlassian",
+          "url": "https://atlassian.design/foundations/grid/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "vis-grafana",
+      "kind": "visual-observation",
+      "title": "同一时窗对照多条监测曲线",
+      "citations": [
+        {
+          "sourceId": "grafana",
+          "publisher": "Linux Screenshots (xmodulo)",
+          "url": "https://commons.wikimedia.org/wiki/File:Grafana_dashboard_(2016).png"
+        }
+      ],
+      "review": "indexed / Codex (source and pixel review) / 2026-11-20T03:11:12.926Z",
+      "rights": "CC BY 2.0 (screenshot); Apache-2.0 (software); retain local research copy only; third-party material and marks excluded from reuse.",
+      "scope": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+      "inspectedHash": "6a38f56deb7e35b29728b9a191cb0fd39f24cf6d652adefad9c2fff2b66e63c2"
+    },
+    {
+      "id": "DAT-003",
+      "kind": "knowledge-rule",
+      "title": "将总览与深入分析分层；图表、指标与筛选条件在同一上下文中相互解释。",
+      "citations": [
+        {
+          "sourceId": "carbon-dataviz",
+          "publisher": "IBM",
+          "url": "https://www.carbondesignsystem.com/building-blocks/data-visualization/overview"
+        },
+        {
+          "sourceId": "carbon-charts",
+          "publisher": "IBM",
+          "url": "https://charts.carbondesignsystem.com/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "FDB-004",
+      "kind": "knowledge-rule",
+      "title": "关键指标附近显示数据时间窗口与异常状态，避免用户将过期信息当成实时结论。",
+      "citations": [
+        {
+          "sourceId": "carbon-dataviz",
+          "publisher": "IBM",
+          "url": "https://www.carbondesignsystem.com/building-blocks/data-visualization/overview"
+        },
+        {
+          "sourceId": "uswds-principles",
+          "publisher": "USWDS",
+          "url": "https://designsystem.digital.gov/design-principles/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "vis-shotcut",
+      "kind": "visual-observation",
+      "title": "预览与多轨时间尺度",
+      "citations": [
+        {
+          "sourceId": "shotcut",
+          "publisher": "Maupao70",
+          "url": "https://commons.wikimedia.org/wiki/File:Shotcut_screenshot.png"
+        }
+      ],
+      "review": "indexed / Codex (source and pixel review) / 2026-11-20T03:01:16.744Z",
+      "rights": "CC BY-SA 4.0; retain local research copy only; third-party material and marks excluded from reuse.",
+      "scope": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+      "inspectedHash": "f80d1e75af8a2db2ca9bba81b6877da802cbbd435d2356eef4f98646e7cbd554"
+    },
+    {
+      "id": "COL-001",
+      "kind": "knowledge-rule",
+      "title": "分离品牌色与状态语义色；危险/成功/警示保持跨组件的一致含义。",
+      "citations": [
+        {
+          "sourceId": "fluent-color",
+          "publisher": "Microsoft",
+          "url": "https://fluent2.microsoft.design/color/"
+        },
+        {
+          "sourceId": "fluent-tokens",
+          "publisher": "Microsoft",
+          "url": "https://fluent2.microsoft.design/design-tokens/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "COL-003",
+      "kind": "knowledge-rule",
+      "title": "高信息密度界面可让中性色承担结构，让重点色用于选中、告警、焦点和行动。",
+      "citations": [
+        {
+          "sourceId": "fluent-color",
+          "publisher": "Microsoft",
+          "url": "https://fluent2.microsoft.design/color/"
+        },
+        {
+          "sourceId": "nng-hierarchy",
+          "publisher": "Nielsen Norman Group",
+          "url": "https://www.nngroup.com/articles/visual-hierarchy-ux-definition/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "TYP-001",
+      "kind": "knowledge-rule",
+      "title": "定义角色化字阶：页面题、区块题、正文、标签、注释，每一种有固定字号/字重/行高。",
+      "citations": [
+        {
+          "sourceId": "fluent-type",
+          "publisher": "Microsoft",
+          "url": "https://fluent2.microsoft.design/typography"
+        },
+        {
+          "sourceId": "atlassian-type",
+          "publisher": "Atlassian",
+          "url": "https://atlassian.design/foundations/typography/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    },
+    {
+      "id": "TYP-002",
+      "kind": "knowledge-rule",
+      "title": "金额、百分比和计数采用便于纵向比对的字形与右对齐方案；单位和变化幅度应弱于主值。",
+      "citations": [
+        {
+          "sourceId": "fluent-type",
+          "publisher": "Microsoft",
+          "url": "https://fluent2.microsoft.design/typography"
+        },
+        {
+          "sourceId": "uswds-table",
+          "publisher": "USWDS",
+          "url": "https://designsystem.digital.gov/components/table/"
+        }
+      ],
+      "review": "catalogued rule; no human review record",
+      "rights": "External material linked for reference. No reproduction permission is recorded.",
+      "scope": "Use the local rule and link to the original source."
+    }
+  ],
+  "seeds": [
+    {
+      "id": "daily-index",
+      "title": "日序读本",
+      "review": "authored-unreviewed",
+      "concept": "让日期成为索引、时段成为条目、理由成为随条可读的旁注。品牌识别来自同一组数字和汉字的阅读节奏。",
+      "tone": "安静、有人情味的日用读物",
+      "applies": "按时间检索、解释并收藏的个人工具",
+      "excludes": "多人同时审核大量字段或实时告警",
+      "rationale": "同日多个选项要靠近，跨日边界要清楚。资料与查询结果承担不同阅读任务。",
+      "match": {
+        "task": [
+          "时段",
+          "择时",
+          "日程",
+          "排期",
+          "时间范围",
+          "itinerary",
+          "time slot"
+        ],
+        "structure": [
+          "日期",
+          "理由",
+          "收藏",
+          "保存",
+          "比较结果"
+        ],
+        "audience": [
+          "个人",
+          "出行",
+          "居民"
+        ],
+        "brand": [
+          "中文排版",
+          "文化",
+          "编辑感",
+          "纸本"
+        ],
+        "devices": [
+          "mobile",
+          "tablet"
+        ]
+      },
+      "references": [
+        {
+          "id": "vis-nearby",
+          "use": "只借用名称与对应读数邻接的组织机制。"
+        },
+        {
+          "id": "TYP-003",
+          "use": "给中文正文与时段读数留出适合手机的字阶。"
+        },
+        {
+          "id": "LAY-001",
+          "use": "以组内和跨组的距离区别日期范围。"
+        },
+        {
+          "id": "MOT-002",
+          "use": "解释在所属时段附近展开，保留阅读位置。"
+        },
+        {
+          "id": "COL-001",
+          "use": "区分品牌、状态和操作面层的色彩职责。"
+        }
+      ],
+      "principles": [
+        {
+          "id": "composition",
+          "guidance": "日期章标题与首个时段共享左边线。查询成功后把条件收为一行可编辑摘要；余宽优先留给理由，避免日期与时段分栏后失去归属。",
+          "sourceIds": [
+            "LAY-001",
+            "vis-nearby"
+          ]
+        },
+        {
+          "id": "typography",
+          "guidance": "中文标题可用系统宋体形成读本气质，密集说明用系统黑体；拉丁数字采用等宽数字。日期介于正文与页题之间，时段用较重字重，解释行高宽于数字行。",
+          "sourceIds": [
+            "TYP-003"
+          ]
+        },
+        {
+          "id": "color-material",
+          "guidance": "低彩度底面托住长文，深色文字承担阅读；品牌调子只点出今天或当前选择。薄边线只隔日期，浮层才投影。需要暗色时保留文字对比；吉凶强弱不能只靠红绿。",
+          "sourceIds": [
+            "COL-001"
+          ]
+        },
+        {
+          "id": "interaction",
+          "guidance": "条件用标签明确的字段，查询用动作动词；详情在时段下展开，收藏反馈附回本行。聚焦用描边、悬停只作预告；查询中保留条件，错误给改日期入口，减少动效时直接展现。",
+          "sourceIds": [
+            "MOT-002",
+            "vis-nearby"
+          ]
+        },
+        {
+          "id": "responsive",
+          "guidance": "桌面可让条件占较窄侧栏，让结果线长容得下理由；手机按条件摘要、日期、时段、理由依序阅读，在展开后保留当前时段。",
+          "sourceIds": [
+            "LAY-001",
+            "TYP-003"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "when": "用户已提交条件且正在挑时段",
+          "avoid": "避免在结果前重复完整资料表或大幅品牌插画。"
+        },
+        {
+          "when": "涉及民俗推断",
+          "avoid": "避免用精密仪表和确定性胜率暗示科学预测。"
+        }
+      ]
+    },
+    {
+      "id": "guided-sequence",
+      "title": "步骤手册",
+      "review": "authored-unreviewed",
+      "concept": "每一步围绕一个尚未解决的问题排版，已经确认的输入压成可回访的摘要。",
+      "tone": "亲切、清晰、可纠错",
+      "applies": "输入资料、选择条件或补齐证据后才能作决定的流程",
+      "excludes": "需要并行扫读许多对象的默认总览",
+      "rationale": "用问题、控件、校验和下一步的邻接关系缩短纠错路径；允许完成者回到原步骤。",
+      "match": {
+        "task": [
+          "资料",
+          "选择事项",
+          "填写",
+          "分步",
+          "申请",
+          "补证",
+          "人工复核",
+          "预约",
+          "onboarding",
+          "application form"
+        ],
+        "structure": [
+          "条件",
+          "步骤",
+          "提交",
+          "复核",
+          "资料",
+          "日期"
+        ],
+        "audience": [
+          "初次",
+          "访客",
+          "申请人",
+          "顾问"
+        ],
+        "brand": [
+          "清晰",
+          "易用",
+          "亲切",
+          "克制"
+        ],
+        "devices": [
+          "mobile"
+        ]
+      },
+      "references": [
+        {
+          "id": "FRM-003",
+          "use": "用最少的必要输入构成当前步骤。"
+        },
+        {
+          "id": "FRM-001",
+          "use": "错误关联具体字段及修正方法。"
+        },
+        {
+          "id": "FDB-002",
+          "use": "等待期间保留上下文和已填值。"
+        },
+        {
+          "id": "ACC-001",
+          "use": "操作入口支持可见键盘焦点。"
+        },
+        {
+          "id": "COL-001",
+          "use": "区分品牌、状态和操作面层的色彩职责。"
+        },
+        {
+          "id": "TYP-001",
+          "use": "按文本角色区分字阶，校准字重和数值对齐。"
+        }
+      ],
+      "principles": [
+        {
+          "id": "composition",
+          "guidance": "当前问题为纵向主轴。上方只留已完成内容的短摘要，正文宽度先满足一行标签与值；跨步骤间距明显大于题干和字段的间距。",
+          "sourceIds": [
+            "FRM-003"
+          ]
+        },
+        {
+          "id": "typography",
+          "guidance": "中文题干用系统黑体中粗字，拉丁字段值沿用同一无衬线家族；题干比字段标签大一级，帮助和错误共享正文可读字阶，用字重区分字段和值。",
+          "sourceIds": [
+            "TYP-001"
+          ]
+        },
+        {
+          "id": "color-material",
+          "guidance": "底面和填写区用中性色加清晰边界；品牌色标当前推进动作，错误用短句与图形。浅色或深色都给输入焦点足够对比，阴影只用于遮挡关系。",
+          "sourceIds": [
+            "COL-001"
+          ]
+        },
+        {
+          "id": "interaction",
+          "guidance": "字段后接明确的下一步，返回时恢复已填值。选择、键盘焦点和 hover 分开表达；提交中保持字段占位并防重复，失败在原字段给纠错入口。状态切换先呈现新题干。",
+          "sourceIds": [
+            "FRM-001",
+            "FDB-002",
+            "ACC-001"
+          ]
+        },
+        {
+          "id": "responsive",
+          "guidance": "桌面可在旁列显示来自先前步骤的摘要；手机把摘要折为可回看的条目，键盘弹起时仍可滚动到推进动作。",
+          "sourceIds": [
+            "FRM-003",
+            "ACC-001"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "when": "审阅者正在横向比较多个候选人",
+          "avoid": "避免让每次切换都重新走一遍资料向导。"
+        },
+        {
+          "when": "错误可由一处输入修正",
+          "avoid": "避免仅在远离字段的页顶显示失败。"
+        }
+      ]
+    },
+    {
+      "id": "evidence-register",
+      "title": "证据对照册",
+      "review": "authored-unreviewed",
+      "concept": "以对象身份作稳定的行头，把要求、原文证据、缺口与人工结论组成一组可回查的记录。",
+      "tone": "专业、审慎、便于核对",
+      "applies": "招聘复核、审计、工单取证与人工签核",
+      "excludes": "强调情感叙事的介绍页或只需单次输入的简单工具",
+      "rationale": "反复切换对象时应该能指出针对谁、哪一项要求、哪一段依据作出了决定。",
+      "match": {
+        "task": [
+          "候选人",
+          "复核",
+          "证据",
+          "审计",
+          "签核",
+          "招聘",
+          "工单",
+          "audit",
+          "candidate review"
+        ],
+        "structure": [
+          "列表",
+          "岗位",
+          "来源",
+          "筛选",
+          "排序",
+          "原文"
+        ],
+        "audience": [
+          "顾问",
+          "招聘",
+          "审核",
+          "分析师"
+        ],
+        "brand": [
+          "专业",
+          "密度",
+          "效率",
+          "理性"
+        ],
+        "devices": [
+          "desktop",
+          "tablet"
+        ]
+      },
+      "references": [
+        {
+          "id": "vis-gnucash",
+          "use": "只取主记录与从属明细对齐的关系，不导入科目、余额或财务颜色。"
+        },
+        {
+          "id": "HIE-003",
+          "use": "把缺口和下一步复核动作跟证据放在一起。"
+        },
+        {
+          "id": "TBL-001",
+          "use": "有多个可比字段时使用稳定的比较轴。"
+        },
+        {
+          "id": "RSP-002",
+          "use": "窄窗优先保住对象与证据的上下文。"
+        },
+        {
+          "id": "COL-003",
+          "use": "区分品牌、状态和操作面层的色彩职责。"
+        },
+        {
+          "id": "TYP-001",
+          "use": "按文本角色区分字阶，校准字重和数值对齐。"
+        }
+      ],
+      "principles": [
+        {
+          "id": "composition",
+          "guidance": "先按人或事项设比较轴，再把证据、原文出处和缺口对齐到同一对象。名单与阅读面按实际证据长度分宽，切换人选时保持名单位置；高频扫读行紧，长引文行距宽。",
+          "sourceIds": [
+            "HIE-003",
+            "TBL-001",
+            "vis-gnucash"
+          ]
+        },
+        {
+          "id": "typography",
+          "guidance": "中文名单用中等字重无衬线，拉丁姓名与职位用接近的 x 高；事实读数对齐数字位。对象名略大于字段值，关键缺口用文字与局部加重，长引文单独控行宽。",
+          "sourceIds": [
+            "TYP-001"
+          ]
+        },
+        {
+          "id": "color-material",
+          "guidance": "中性底面与细分隔建立列关系；保留一个品牌强调用于当前对象。待补证需同时有文字或标记，避免把匹配度颜色当录用结论。暗色时用层级亮度区分工作面。",
+          "sourceIds": [
+            "COL-003"
+          ]
+        },
+        {
+          "id": "interaction",
+          "guidance": "搜索字段和筛选先缩小范围；名单操作进入证据，再提供复核与保存。选中、hover 和键盘焦点各自可辨；加载保留姓名，保存错误留住草稿与重试入口，不以动画表示落盘。",
+          "sourceIds": [
+            "HIE-003",
+            "TBL-001"
+          ]
+        },
+        {
+          "id": "responsive",
+          "guidance": "桌面可并排置证据或沿主行展开；手机名单压为姓名、缺口与状态，进入详情后把对象名、原文出处和返回入口连在一起，保存动作随已选对象出现。",
+          "sourceIds": [
+            "RSP-002",
+            "vis-gnucash"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "when": "目标设备只能容下一个阅读列",
+          "avoid": "避免缩小全表到无法读出缺口。"
+        },
+        {
+          "when": "尚未选中对象或未读到依据",
+          "avoid": "避免把保存复核作为无前置条件的强操作。"
+        }
+      ]
+    },
+    {
+      "id": "signal-window",
+      "title": "时窗观察台",
+      "review": "authored-unreviewed",
+      "concept": "围绕一个异常、它的时间范围与可追查的原因排布，图表之间共享刻度。",
+      "tone": "冷静、有尺度感的监测工具",
+      "applies": "运维趋势、经营指标异常与事件定位",
+      "excludes": "没有历史序列及可比口径的展示页",
+      "rationale": "先交代变化是否发生和口径，再让读者沿同一时间轴追查。",
+      "match": {
+        "task": [
+          "监测",
+          "监控",
+          "趋势",
+          "指标异常",
+          "经营指标",
+          "告警",
+          "telemetry",
+          "monitoring"
+        ],
+        "structure": [
+          "时窗",
+          "时间轴",
+          "指标",
+          "波动",
+          "趋势"
+        ],
+        "audience": [
+          "运维",
+          "经营",
+          "负责人"
+        ],
+        "brand": [
+          "冷静",
+          "专业",
+          "精确"
+        ],
+        "devices": [
+          "desktop"
+        ]
+      },
+      "references": [
+        {
+          "id": "vis-grafana",
+          "use": "借用多视图共用时间刻度的阅读逻辑。"
+        },
+        {
+          "id": "DAT-003",
+          "use": "把总览、筛选及下钻放在同一决策上下文。"
+        },
+        {
+          "id": "FDB-004",
+          "use": "指标旁保留数据时窗和更新时间。"
+        },
+        {
+          "id": "COL-001",
+          "use": "区分品牌、状态和操作面层的色彩职责。"
+        },
+        {
+          "id": "TYP-002",
+          "use": "按文本角色区分字阶，校准字重和数值对齐。"
+        }
+      ],
+      "principles": [
+        {
+          "id": "composition",
+          "guidance": "让一个待解释的变化占最宽阅读区，窄栏给基准与更新时间；共享横轴的关联序列对齐。跨图的间距大于图例与曲线之间的间距。",
+          "sourceIds": [
+            "vis-grafana",
+            "DAT-003"
+          ]
+        },
+        {
+          "id": "typography",
+          "guidance": "中文解释用系统无衬线，时点和指标使用统一等宽数字；主读数约高于标签两级，单位降一级，状态注释保持可读行高。",
+          "sourceIds": [
+            "TYP-002"
+          ]
+        },
+        {
+          "id": "color-material",
+          "guidance": "数据分类、告警和品牌使用不同角色。用中性视图区和低对比网线，让线型及直接标注辅助颜色；深色显示时验证细线对比，浅色显示时减少大面积强调。",
+          "sourceIds": [
+            "COL-001"
+          ]
+        },
+        {
+          "id": "interaction",
+          "guidance": "时窗与对象筛选在图旁，选点后显示对应事件。键盘可移到测点，hover 解释也可由点击打开；加载保留时窗，失败标明最后更新时间，降低动态时停止流动背景。",
+          "sourceIds": [
+            "DAT-003",
+            "FDB-004"
+          ]
+        },
+        {
+          "id": "responsive",
+          "guidance": "桌面多序列共享时间轴，手机先列异常和时窗，用户选一项才展开趋势与关联事件，保留返回到同一时窗。",
+          "sourceIds": [
+            "vis-grafana",
+            "DAT-003"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "when": "实际时点或统计口径缺失",
+          "avoid": "避免用填充曲线制造实时感。"
+        },
+        {
+          "when": "告警与品牌采用相近色调",
+          "avoid": "另加文字和形状标识状态。"
+        }
+      ]
+    },
+    {
+      "id": "media-stage",
+      "title": "素材校样台",
+      "review": "authored-unreviewed",
+      "concept": "把素材预览放在稳定的工作面上，编辑与对照沿同一坐标或时间轴操作。",
+      "tone": "专注、可逆、尊重素材本身",
+      "applies": "影音剪辑、逐帧校样、轨道标记",
+      "excludes": "用列表复核文档或需要读长段文字的任务",
+      "rationale": "预览是被编辑对象；工具和元数据应围绕当前帧及选区，而不改变其坐标关系。",
+      "match": {
+        "task": [
+          "剪辑",
+          "逐帧",
+          "剪片",
+          "音轨",
+          "波形",
+          "校样",
+          "timeline edit",
+          "video edit"
+        ],
+        "structure": [
+          "预览",
+          "轨道",
+          "播放",
+          "选区",
+          "裁切"
+        ],
+        "audience": [
+          "剪辑师",
+          "创作者",
+          "编辑师"
+        ],
+        "brand": [
+          "沉浸",
+          "专注",
+          "工具感"
+        ],
+        "devices": [
+          "desktop",
+          "tablet"
+        ]
+      },
+      "references": [
+        {
+          "id": "vis-shotcut",
+          "use": "借用预览与轨道分享对象及时间坐标的关系。"
+        },
+        {
+          "id": "MOT-002",
+          "use": "工具切换保持当前对象连续。"
+        },
+        {
+          "id": "ACC-001",
+          "use": "时间点和选区提供可聚焦操作。"
+        },
+        {
+          "id": "COL-001",
+          "use": "区分品牌、状态和操作面层的色彩职责。"
+        },
+        {
+          "id": "TYP-002",
+          "use": "按文本角色区分字阶，校准字重和数值对齐。"
+        }
+      ],
+      "principles": [
+        {
+          "id": "composition",
+          "guidance": "素材预览优先占连续面积，工具区服从素材比例；下面的时间轴对齐当前帧。缩略轨道连续，属性组间增加间隔，避免每个工具都抢占中心。",
+          "sourceIds": [
+            "vis-shotcut"
+          ]
+        },
+        {
+          "id": "typography",
+          "guidance": "工具、参数和简短中文标签用朴素系统黑体，拉丁时间码等宽；级差主要分区标题和字段两级，密集数值用较松行高和固定对齐点。",
+          "sourceIds": [
+            "TYP-002"
+          ]
+        },
+        {
+          "id": "color-material",
+          "guidance": "中性预览边框隔绝素材自带色，单一强调标记播放头或当前选区；暗工作面适合亮素材，浅色作品保留校样边界。错误、静音和锁定都配图形或文字。",
+          "sourceIds": [
+            "COL-001"
+          ]
+        },
+        {
+          "id": "interaction",
+          "guidance": "选中轨道后才展示对应调整；按钮负责离散操作，参数字段负责精确值。悬停不覆盖校样，键盘焦点可见，加载保持帧位，错误可回到前一版，拖动反馈即时。",
+          "sourceIds": [
+            "MOT-002",
+            "ACC-001"
+          ]
+        },
+        {
+          "id": "responsive",
+          "guidance": "桌面保留预览、属性和轨道，手机让预览与当前一条轨道持续可见，属性改为按需展开，收起后恢复同一时间码。",
+          "sourceIds": [
+            "vis-shotcut",
+            "MOT-002"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "when": "用户正对齐剪辑点",
+          "avoid": "避免打开属性面板时整体移动预览坐标。"
+        },
+        {
+          "when": "素材本身颜色参与校样",
+          "avoid": "避免在画面上叠加品牌滤镜。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>寻序 · 招聘工作台</title>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">跳至候选人工作区</a>
+<div class="shell">
+<aside class="sidebar">
+  <div class="brand"><span class="brand-mark" data-icon="brand"></span><div><strong>寻序</strong><small>HIRING WORKSPACE</small></div></div>
+  <div class="side-label">招聘工作区</div>
+  <nav aria-label="工作区">
+    <button class="nav-button selected" id="nav-pool" aria-current="page"><span data-icon="people"></span>候选人池</button>
+    <button class="nav-button" id="nav-agent"><span data-icon="activity"></span>Agent 任务<span class="nav-alert" aria-hidden="true"></span></button>
+  </nav>
+  <div class="side-label projects-label">当前职位</div>
+  <div class="project"><span class="project-dot"></span><div><strong>高级产品经理</strong><small>产品与设计 · 上海</small></div></div>
+  <div class="side-bottom"><span class="profile">招</span><div><strong>招聘顾问</strong><small>本地演示工作区</small></div></div>
+</aside>
+<div class="workspace">
+<header class="topbar">
+  <div class="crumb"><span class="mobile-brand brand-mark" data-icon="brand"></span><span class="crumb-root">招聘工作区</span><span class="crumb-arrow" data-icon="chevron"></span><strong>候选人池</strong></div>
+  <span class="demo"><i></i>示例数据</span>
+</header>
+<div class="page">
+<div class="page-heading">
+  <div><h1>候选人池</h1><p>筛选人选、核对匹配依据，并记录复核决定。</p></div>
+  <button class="button secondary mobile-agent" id="mobile-agent"><span data-icon="activity"></span>Agent 任务 <i class="nav-alert"></i></button>
+  <button class="button primary" id="start" data-testid="primary-action"><span data-icon="spark"></span><span id="start-label">模拟匹配</span></button>
+</div>
+<p class="feedback" id="feedback" data-testid="action-feedback" role="status" aria-live="polite"></p>
+<div class="work-grid">
+<main class="main" id="main">
+<section class="job" aria-label="匹配职位">
+  <span class="job-icon" data-icon="brief"></span>
+  <div class="job-name"><small>当前匹配职位</small><h2>高级产品经理</h2></div>
+  <div class="job-meta"><span>上海</span><span>B2B SaaS</span><span>5 年以上</span></div>
+  <span class="job-code">REQ-024</span>
+</section>
+<section class="pool panel" aria-labelledby="pool-title">
+  <div class="pool-header"><h2 id="pool-title">候选人列表</h2><span class="count-summary" id="total"></span></div>
+  <div class="tabs" id="tabs" aria-label="复核状态"></div>
+  <div class="filters">
+    <label class="search"><span data-icon="search"></span><input id="query" type="search" placeholder="搜索姓名、公司或技能" aria-label="搜索姓名、公司或技能"></label>
+    <label class="select"><span data-icon="layers"></span><select id="source" aria-label="候选人来源"><option value="">全部来源</option><option>人才库</option><option>员工推荐</option><option>官网投递</option></select></label>
+    <label class="select"><span data-icon="filter"></span><select id="threshold" aria-label="最低匹配度"><option value="">全部匹配度</option><option value="85">匹配 ≥ 85%</option><option value="75">匹配 ≥ 75%</option></select></label>
+    <label class="select mobile-sort"><select id="mobile-sort" aria-label="匹配度排序"><option value="descending">匹配度降序</option><option value="ascending">匹配度升序</option></select></label>
+  </div>
+  <div class="results"><span id="result-count" role="status"></span><button id="reset" class="text-button" hidden>清除筛选</button></div>
+  <table aria-label="候选人与职位匹配对照">
+    <thead><tr><th scope="col">候选人</th><th scope="col" id="score-head" aria-sort="descending"><button class="sort" id="sort">匹配度 <span aria-hidden="true">↓</span></button></th><th scope="col">匹配依据 / 待核实</th><th scope="col">来源</th><th scope="col">复核状态</th><th scope="col"><span class="sr-only">操作</span></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <div id="mobile-rows" class="mobile-rows"></div>
+  <div class="empty" id="empty" hidden><span data-icon="search"></span><h3>没有符合条件的候选人</h3><p>尝试调整关键词、来源或匹配度。</p><button class="button secondary" id="empty-reset">清除筛选</button></div>
+  <footer class="pool-footer"><span id="range"></span><span>匹配度为示例评估，最终决定由人工复核</span></footer>
+</section>
+</main>
+<aside id="agent" class="agent" aria-label="Agent 任务与来源" tabindex="-1">
+  <section class="panel task">
+    <div class="panel-heading"><span class="section-icon" data-icon="activity"></span><h2>Agent 执行</h2><button class="icon-button agent-close" id="agent-close" aria-label="收起 Agent 面板"><span data-icon="close"></span></button></div>
+    <div class="task-body">
+      <div class="task-title"><strong>职位匹配</strong><span class="task-state" id="task-state"></span></div>
+      <p class="task-id" id="task-id"></p>
+      <div class="progress-label"><span id="progress-label"></span><strong id="progress-count"></strong></div>
+      <progress id="progress" max="8" value="8" aria-label="已处理候选人数"></progress>
+      <ol class="timeline" id="timeline"></ol>
+      <button id="pause" class="button secondary pause" hidden></button>
+    </div>
+  </section>
+  <section class="panel sources">
+    <div class="panel-heading"><span class="section-icon" data-icon="layers"></span><h2>数据来源</h2><span class="panel-caption">3 个来源</span></div>
+    <ul class="source-list" id="source-list"></ul>
+    <div class="warning" id="warning"></div>
+  </section>
+</aside>
+</div>
+</div>
+</div>
+</div>
+<dialog id="detail" aria-labelledby="detail-title"><div id="detail-content"></div></dialog>
+</body>
+</html>

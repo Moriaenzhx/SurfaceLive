@@ -1,0 +1,51 @@
+[
+  {
+    "sourceId": "calc",
+    "sceneTags": [
+      "b2b-workbench"
+    ],
+    "versionHash": "f47be35a60acbac717426c646462bce802ec6d1c857cd28f55d2ee5d311a4045",
+    "applicability": "桌面端候选人多字段逐项复核。",
+    "contraindications": "把普通只读招聘列表做成空白电子表格，或只用颜色指示选中。",
+    "id": "vis-calc",
+    "kind": "VisualExemplar",
+    "title": "用双轴定位当前单元",
+    "pageState": "空白工作表，A1 有黑框，行号 1 和列头 A 高亮。",
+    "visualHierarchy": "白色工作区占大部分画面，深灰工具带在上方。",
+    "layoutGrammar": "列字母和行号把细网格围在两轴之间，名称框再次标出 A1。",
+    "typographyRhythm": "紧凑坐标标签与菜单小字同尺度，工作表标签稍粗。",
+    "colorRoles": "蓝色给当前行列头，强轮廓给活动单元格。",
+    "density": "可见数十行和二十余列；内容为空。",
+    "focalPoint": "左上角选区与相邻轴标。",
+    "transferablePrinciples": "高密度复核表同时标记活动对象和字段，让用户能指出正在判断哪一项。",
+    "copyingRestrictions": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+    "pixelInspectedBy": "Codex (visual inspection)",
+    "inspectedHash": "c18e78e979e8e2baadb9f58e908d4fda845bf5ed180d1a64354d2558b692918f",
+    "viewportBasis": "screenshot-raster",
+    "capturedViewport": {
+      "width": 1920,
+      "height": 1052
+    },
+    "screenshotPathOrLink": "https://upload.wikimedia.org/wikipedia/commons/4/45/LibreOffice_Calc_6.2_screenshot.png",
+    "humanReview": "pending",
+    "motionEvidence": "not-observed"
+  },
+  {
+    "sourceId": "calc",
+    "sceneTags": [
+      "b2b-workbench"
+    ],
+    "versionHash": "f47be35a60acbac717426c646462bce802ec6d1c857cd28f55d2ee5d311a4045",
+    "applicability": "桌面端候选人多字段逐项复核。",
+    "contraindications": "把普通只读招聘列表做成空白电子表格，或只用颜色指示选中。",
+    "id": "rule-calc",
+    "kind": "DesignRule",
+    "title": "应用建议 · 用双轴定位当前单元",
+    "topic": "用双轴定位当前单元",
+    "decision": "高密度复核表同时标记活动对象和字段，让用户能指出正在判断哪一项。",
+    "positiveExample": "白色工作区占大部分画面，深灰工具带在上方。",
+    "negativeExample": "把普通只读招聘列表做成空白电子表格，或只用颜色指示选中。",
+    "observableCheck": "在灰度视图能从轮廓和文字读出选中的人选与字段。",
+    "confidence": 0.65
+  }
+]

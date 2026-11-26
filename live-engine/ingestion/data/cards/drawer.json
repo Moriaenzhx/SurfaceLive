@@ -1,0 +1,51 @@
+[
+  {
+    "sourceId": "drawer",
+    "sceneTags": [
+      "local-consumer"
+    ],
+    "versionHash": "6d4879c921733595479d05ddec0f8fa66d2ccc449439c889c3b932447829485c",
+    "applicability": "手机端次要目的地较多时。",
+    "contraindications": "把首要发布入口埋入二级菜单，或复制图中品牌字标。",
+    "id": "vis-drawer",
+    "kind": "VisualExemplar",
+    "title": "抽屉分隔身份、目的地与设置",
+    "pageState": "手机导航菜单展开，右侧留一条变暗的原页面。",
+    "visualHierarchy": "账号在上，三个常用目的地紧随其后，More 在底部。",
+    "layoutGrammar": "单列图标和文本对齐，分隔线划开身份和工具区。",
+    "typographyRhythm": "白色标签同字号，行间距大于字高。",
+    "colorRoles": "黑色菜单、高对比白字，灰色遮罩提示背景。",
+    "density": "上部三行紧凑，底部操作前留长空白。",
+    "focalPoint": "纵向对齐的目的地名称。",
+    "transferablePrinciples": "在二级导航中把常用目的地排在一起，让设置与身份独立成组。",
+    "copyingRestrictions": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+    "pixelInspectedBy": "Codex (visual inspection)",
+    "inspectedHash": "67686e7a78e39bb269aee00856616cc213f320e2c10fb92dd78b62231252d4d8",
+    "viewportBasis": "screenshot-raster",
+    "capturedViewport": {
+      "width": 480,
+      "height": 800
+    },
+    "screenshotPathOrLink": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Wikipedia_Android_app_menu_open.png",
+    "humanReview": "pending",
+    "motionEvidence": "not-observed"
+  },
+  {
+    "sourceId": "drawer",
+    "sceneTags": [
+      "local-consumer"
+    ],
+    "versionHash": "6d4879c921733595479d05ddec0f8fa66d2ccc449439c889c3b932447829485c",
+    "applicability": "手机端次要目的地较多时。",
+    "contraindications": "把首要发布入口埋入二级菜单，或复制图中品牌字标。",
+    "id": "rule-drawer",
+    "kind": "DesignRule",
+    "title": "应用建议 · 抽屉分隔身份、目的地与设置",
+    "topic": "抽屉分隔身份、目的地与设置",
+    "decision": "在二级导航中把常用目的地排在一起，让设置与身份独立成组。",
+    "positiveExample": "账号在上，三个常用目的地紧随其后，More 在底部。",
+    "negativeExample": "把首要发布入口埋入二级菜单，或复制图中品牌字标。",
+    "observableCheck": "从菜单第一屏能分清身份区、目的地区与设置区。",
+    "confidence": 0.65
+  }
+]

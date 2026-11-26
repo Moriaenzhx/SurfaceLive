@@ -1,0 +1,51 @@
+[
+  {
+    "sourceId": "gnucash",
+    "sceneTags": [
+      "b2b-workbench"
+    ],
+    "versionHash": "0793f5339e09e09ae87e333e3674de5a8d20acd133248ba51b98d5b2a63f6bfd",
+    "applicability": "招聘工作台需要跨候选人比较，同时核对逐项来源。",
+    "contraindications": "把每条证据都排成独立候选人，或给每个人选分配整页明细。",
+    "id": "vis-gnucash",
+    "kind": "VisualExemplar",
+    "title": "主记录与明细共用比较列",
+    "pageState": "账户登记簿中多笔交易的拆分明细可见，底部有输入行。",
+    "visualHierarchy": "横跨整行的绿色主记录与内缩的米色明细组成一组。",
+    "layoutGrammar": "日期只占主行，说明与金额列向下对齐；上方单行列出账户余额。",
+    "typographyRhythm": "窄行、短标签、同级数字等大，金额在列尾对齐。",
+    "colorRoles": "浅绿色区分主记录，黄色标出录入行，灰色用于命令。",
+    "density": "一屏有多组交易，每组一至四行明细。",
+    "focalPoint": "主记录横带和右侧余额列。",
+    "transferablePrinciples": "候选人的关键比较字段保持在主行，把来源和匹配依据排在紧邻的次行。",
+    "copyingRestrictions": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+    "pixelInspectedBy": "Codex (visual inspection)",
+    "inspectedHash": "efa676835e9d6bde0b3edde9f9c4cf93b3bb5395c5255b0666fe64ae7c0b3c66",
+    "viewportBasis": "screenshot-raster",
+    "capturedViewport": {
+      "width": 809,
+      "height": 568
+    },
+    "screenshotPathOrLink": "https://upload.wikimedia.org/wikipedia/commons/2/22/GnuCash_screenshot.png",
+    "humanReview": "pending",
+    "motionEvidence": "not-observed"
+  },
+  {
+    "sourceId": "gnucash",
+    "sceneTags": [
+      "b2b-workbench"
+    ],
+    "versionHash": "0793f5339e09e09ae87e333e3674de5a8d20acd133248ba51b98d5b2a63f6bfd",
+    "applicability": "招聘工作台需要跨候选人比较，同时核对逐项来源。",
+    "contraindications": "把每条证据都排成独立候选人，或给每个人选分配整页明细。",
+    "id": "rule-gnucash",
+    "kind": "DesignRule",
+    "title": "应用建议 · 主记录与明细共用比较列",
+    "topic": "主记录与明细共用比较列",
+    "decision": "候选人的关键比较字段保持在主行，把来源和匹配依据排在紧邻的次行。",
+    "positiveExample": "横跨整行的绿色主记录与内缩的米色明细组成一组。",
+    "negativeExample": "把每条证据都排成独立候选人，或给每个人选分配整页明细。",
+    "observableCheck": "连续查看三个人选时比较列保持对齐，证据行的归属清楚。",
+    "confidence": 0.65
+  }
+]

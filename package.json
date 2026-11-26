@@ -1,0 +1,35 @@
+{
+  "name": "surfacelive-live-engine-devstart",
+  "version": "0.0.1-poc",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test experiments/tests/*.test.ts live-engine/knowledge/tests/*.test.ts live-engine/ingestion/tests/*.test.ts desktop/tests/*.test.mjs",
+    "knowledge:check": "node --experimental-strip-types live-engine/knowledge/cli.ts check",
+    "knowledge:bench": "node --experimental-strip-types live-engine/knowledge/cli.ts bench",
+    "bench:plan": "node --experimental-strip-types experiments/cli.ts plan",
+    "bench:mock": "node --experimental-strip-types experiments/cli.ts mock",
+    "bench:run": "node --experimental-strip-types experiments/cli.ts run",
+    "factory": "node --experimental-strip-types live-engine/ingestion/cli.ts",
+    "bench:blind": "node --experimental-strip-types experiments/blind.ts",
+    "bench:verify": "node --experimental-strip-types experiments/recheck.ts",
+    "desktop:build": "node desktop/build.mjs",
+    "desktop": "node desktop/build.mjs && electron build/desktop",
+    "desktop:package": "node desktop/build.mjs --package"
+  },
+  "optionalDependencies": {
+    "playwright-core": "^1.56.0"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "pngjs": "^7.0.0",
+    "robots-parser": "^3.0.1"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "45.4.1"
+  }
+}

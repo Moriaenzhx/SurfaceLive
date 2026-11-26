@@ -1,0 +1,51 @@
+[
+  {
+    "sourceId": "grafana",
+    "sceneTags": [
+      "executive-dashboard"
+    ],
+    "versionHash": "9f333e7e1e4d1dac62b03d2a1635437acb468b0df9f7684191a5a8d2c92fb998",
+    "applicability": "老板比较一段时间中的多个经营信号。",
+    "contraindications": "并列展示同一指标的重复图，或在图间暗中更换日期范围。",
+    "id": "vis-grafana",
+    "kind": "VisualExemplar",
+    "title": "同一时窗对照多条监测曲线",
+    "pageState": "网站概览固定在最近三小时，登录和资源占用等图表同时可见。",
+    "visualHierarchy": "顶部大数字引出下方趋势；更宽的图承载较多序列。",
+    "layoutGrammar": "上方三列，中段双列；不同图反复出现相同时间刻度。",
+    "typographyRhythm": "数字大于标题，图例和轴标更小且贴近数据。",
+    "colorRoles": "深色面板与彩色曲线形成对比，色彩种类多。",
+    "density": "八个完整面板，底部还有一张局部可见的图。",
+    "focalPoint": "首行三组数字及第二行曲线尖峰。",
+    "transferablePrinciples": "多项经营指标出现异常时，让相关图共用时间窗，便于核对变化是否同期。",
+    "copyingRestrictions": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+    "pixelInspectedBy": "Codex (visual inspection)",
+    "inspectedHash": "6a38f56deb7e35b29728b9a191cb0fd39f24cf6d652adefad9c2fff2b66e63c2",
+    "viewportBasis": "screenshot-raster",
+    "capturedViewport": {
+      "width": 1481,
+      "height": 954
+    },
+    "screenshotPathOrLink": "https://upload.wikimedia.org/wikipedia/commons/0/04/Grafana_dashboard_(2016).png",
+    "humanReview": "pending",
+    "motionEvidence": "not-observed"
+  },
+  {
+    "sourceId": "grafana",
+    "sceneTags": [
+      "executive-dashboard"
+    ],
+    "versionHash": "9f333e7e1e4d1dac62b03d2a1635437acb468b0df9f7684191a5a8d2c92fb998",
+    "applicability": "老板比较一段时间中的多个经营信号。",
+    "contraindications": "并列展示同一指标的重复图，或在图间暗中更换日期范围。",
+    "id": "rule-grafana",
+    "kind": "DesignRule",
+    "title": "应用建议 · 同一时窗对照多条监测曲线",
+    "topic": "同一时窗对照多条监测曲线",
+    "decision": "多项经营指标出现异常时，让相关图共用时间窗，便于核对变化是否同期。",
+    "positiveExample": "顶部大数字引出下方趋势；更宽的图承载较多序列。",
+    "negativeExample": "并列展示同一指标的重复图，或在图间暗中更换日期范围。",
+    "observableCheck": "同一日期在各图的标记可对读，每个单位和周期清楚可见。",
+    "confidence": 0.65
+  }
+]

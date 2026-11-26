@@ -1,0 +1,51 @@
+[
+  {
+    "sourceId": "audacity",
+    "sceneTags": [
+      "creative-editor"
+    ],
+    "versionHash": "ae64bc9911b1cbf4e920b41385016741959cd86f9e712bb2f8e79747e10e2b95",
+    "applicability": "音频编辑和需要定位区段的时序检查。",
+    "contraindications": "让轴标签覆盖波形，或把空轨区域填满装饰。",
+    "id": "vis-audacity",
+    "kind": "VisualExemplar",
+    "title": "波形与双侧尺度",
+    "pageState": "一个单声道波形占据首条轨道，其下为空工作区。",
+    "visualHierarchy": "横跨窗口的蓝色波形先于边缘的小控件被看见。",
+    "layoutGrammar": "轨道标题与声道参数在左，上方时间、左侧幅度、底部选择区数值互补。",
+    "typographyRhythm": "小字号刻度沿边排列，波形内部未叠文字。",
+    "colorRoles": "蓝色代表信号，灰色承载工具，黄色细线圈定轨道。",
+    "density": "首轨很密，下方保留大块空余。",
+    "focalPoint": "波形边缘的峰谷。",
+    "transferablePrinciples": "把时间与强度刻度留在数据外围，精确数值放在稳定的读数区域。",
+    "copyingRestrictions": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+    "pixelInspectedBy": "Codex (visual inspection)",
+    "inspectedHash": "8677ab1885876cd1464fb427d6e5b2d21fb78c3d594cf45118f29b6ebf94d86f",
+    "viewportBasis": "screenshot-raster",
+    "capturedViewport": {
+      "width": 1158,
+      "height": 575
+    },
+    "screenshotPathOrLink": "https://upload.wikimedia.org/wikipedia/commons/9/94/Audacity_screenshot.png",
+    "humanReview": "pending",
+    "motionEvidence": "not-observed"
+  },
+  {
+    "sourceId": "audacity",
+    "sceneTags": [
+      "creative-editor"
+    ],
+    "versionHash": "ae64bc9911b1cbf4e920b41385016741959cd86f9e712bb2f8e79747e10e2b95",
+    "applicability": "音频编辑和需要定位区段的时序检查。",
+    "contraindications": "让轴标签覆盖波形，或把空轨区域填满装饰。",
+    "id": "rule-audacity",
+    "kind": "DesignRule",
+    "title": "应用建议 · 波形与双侧尺度",
+    "topic": "波形与双侧尺度",
+    "decision": "把时间与强度刻度留在数据外围，精确数值放在稳定的读数区域。",
+    "positiveExample": "横跨窗口的蓝色波形先于边缘的小控件被看见。",
+    "negativeExample": "让轴标签覆盖波形，或把空轨区域填满装饰。",
+    "observableCheck": "同时能看到波形边缘与两条量纲，读数区可辨。",
+    "confidence": 0.65
+  }
+]

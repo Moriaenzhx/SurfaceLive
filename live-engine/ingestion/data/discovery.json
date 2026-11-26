@@ -1,0 +1,16 @@
+{
+  "source": {
+    "id": "commons-mobile-listing",
+    "title": "Commons Android App screenshots",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/Category:Commons_Android_App_screenshots",
+    "publisher": "Wikimedia Commons contributors",
+    "sceneTags": ["local-consumer"],
+    "rightsStatus": "analysis-permitted",
+    "licenseOrTerms": "Inspect public category links only. Each linked file needs individual rights review.",
+    "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "rightsReviewedBy": "Codex (listing and Wikimedia terms)",
+    "rightsReviewedAt": "2026-11-20"
+  },
+  "pathPrefix": "/wiki/File:",
+  "limit": 3
+}

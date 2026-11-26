@@ -1,0 +1,340 @@
+{
+  "schemaVersion": "1.0",
+  "id": "ae1d2cb7-b732-496f-a960-1fb15a8e1396",
+  "runId": "a3ab2765-f0af-4adb-9b5a-f77236e378f8",
+  "directionId": "example-walkthrough",
+  "requirements": {
+    "brief": "做一个高级的 SaaS 产品官网。",
+    "explicit": [
+      "SaaS 产品官网"
+    ],
+    "tokenLocks": [],
+    "host": [
+      "离线 HTML/CSS/JS，使用系统字体和本地资源。",
+      "主操作改变真实业务状态并给出可见反馈。",
+      "保留键盘操作和可见焦点，目标视口避免横向溢出，正文与底色对比度至少 4.5。"
+    ],
+    "uncertainties": [
+      "核心能力、购买者、品牌规范和转化目标均未知。"
+    ],
+    "assumptions": [
+      "暂以了解能力示例为第一步，待确认。"
+    ]
+  },
+  "experiencePlan": {
+    "audience": [
+      {
+        "value": "正在判断是否值得继续了解的访客（待确认）",
+        "evidence": "做一个高级的 SaaS 产品官网。",
+        "source": "director-inference"
+      }
+    ],
+    "productGoals": [
+      {
+        "value": "SaaS 产品官网",
+        "evidence": "SaaS 产品官网",
+        "source": "user"
+      }
+    ],
+    "pageGoal": "让访客理解产品能帮助完成什么，查看一个清楚标注的示例。",
+    "tasks": [
+      {
+        "value": "让访客理解产品能帮助完成什么，查看一个清楚标注的示例。",
+        "evidence": "做一个高级的 SaaS 产品官网。",
+        "source": "director-inference"
+      }
+    ],
+    "entities": [
+      "产品用途",
+      "能力示例",
+      "下一步联系"
+    ],
+    "informationArchitecture": "用途、能力示意、接入条件。",
+    "states": [
+      {
+        "id": "initial",
+        "purpose": "理解用途",
+        "priority": [
+          "产品用途",
+          "能力示例",
+          "下一步联系"
+        ],
+        "controls": [
+          "查看示例"
+        ],
+        "taskEvidence": "做一个高级的 SaaS 产品官网。"
+      },
+      {
+        "id": "example",
+        "purpose": "查看一次示意工作流",
+        "priority": [
+          "能力示例",
+          "产品用途",
+          "下一步联系"
+        ],
+        "controls": [
+          "了解接入条件"
+        ],
+        "taskEvidence": "做一个高级的 SaaS 产品官网。"
+      },
+      {
+        "id": "contact",
+        "purpose": "了解下一步",
+        "priority": [
+          "下一步联系",
+          "产品用途",
+          "能力示例"
+        ],
+        "controls": [
+          "返回示例"
+        ],
+        "taskEvidence": "做一个高级的 SaaS 产品官网。"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "initial",
+        "to": "example",
+        "action": "查看示例"
+      },
+      {
+        "from": "example",
+        "to": "contact",
+        "action": "了解接入条件"
+      }
+    ],
+    "layouts": {
+      "desktop": {
+        "structure": "说明与示意工作流并排，保留一条阅读主线。",
+        "order": [
+          "产品用途",
+          "能力示例",
+          "下一步联系"
+        ]
+      },
+      "mobile": {
+        "structure": "用途、示例、下一步顺序阅读，示例可折叠。",
+        "order": [
+          "产品用途",
+          "能力示例",
+          "下一步联系"
+        ]
+      }
+    },
+    "preservedFunctions": []
+  },
+  "artDirection": {
+    "concept": "以一个示例解释产品",
+    "rationale": "能力和品牌尚待确认，先用一个带边界的示例解释价值。",
+    "selection": "能力和品牌尚待确认，先用一个带边界的示例解释价值。",
+    "composition": "从用户问题进入对照示例。",
+    "focalPoint": "当前阅读章节中的示例输入与输出。",
+    "typography": "大标题建立阅读入口，小字注明示意内容。",
+    "interactionPath": "读用途，打开示例，再了解接入条件。",
+    "motionDirection": "章节切换使用短暂淡入，减少动态时立即切换。",
+    "brandTone": "简练的产品说明书，待品牌确认",
+    "colorIntent": "纸白底配墨色文字，暗砖红用作暂定强调色。",
+    "surfaceTone": "light",
+    "headingScale": "larger",
+    "density": "一屏只展开一个能力示例。",
+    "componentLanguage": "章节标题、输入与输出对照、清晰的下一步链接。",
+    "antiPatterns": [
+      "虚构客户标识、收入图表和未经证实的量化承诺"
+    ],
+    "caseDecisions": [],
+    "rules": [],
+    "preferences": [],
+    "evidenceGaps": [
+      "此离线示例未执行检索。"
+    ]
+  },
+  "designSystem": {
+    "tokens": {
+      "color.brand.primary": "#873e30",
+      "color.surface.base": "#fffaf4",
+      "color.text.primary": "#30251f",
+      "color.action.primary": "#80382d",
+      "type.family.body": "Georgia, serif",
+      "type.size.body": "17px",
+      "type.size.heading": "32px",
+      "type.weight.body": "400",
+      "type.lineHeight.body": "1.6",
+      "space.component.md": "16px",
+      "radius.control": "2px",
+      "border.control": "1px solid #bba899",
+      "shadow.surface": "none",
+      "motion.feedback": "140ms"
+    },
+    "iconLanguage": "只为外部链接和展开动作使用线描箭头",
+    "componentStates": "展开、已读和焦点均有文字或边框反馈。",
+    "motion": "章节切换使用短暂淡入，减少动态时立即切换。",
+    "responsiveRule": "用途、示例、下一步顺序阅读，示例可折叠。",
+    "creativeFreedom": "在保留状态重心、用户要求和可操作性的前提下调整换行、控件细节与非锁定 Token。"
+  },
+  "evaluationPlan": {
+    "viewports": [
+      {
+        "device": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "device": "mobile",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "checks": [
+      {
+        "state": "initial",
+        "viewport": "desktop",
+        "visible": [
+          "产品用途与示例入口"
+        ],
+        "controls": [
+          "查看示例"
+        ],
+        "primaryEntity": "产品用途",
+        "firstViewport": [
+          "产品用途与示例入口"
+        ],
+        "success": "可辨认产品用途与示例入口，可找到「查看示例」。"
+      },
+      {
+        "state": "initial",
+        "viewport": "mobile",
+        "visible": [
+          "产品用途与示例入口"
+        ],
+        "controls": [
+          "查看示例"
+        ],
+        "primaryEntity": "产品用途",
+        "firstViewport": [
+          "产品用途与查看示例"
+        ],
+        "success": "可辨认产品用途与示例入口，可找到「查看示例」。"
+      },
+      {
+        "state": "example",
+        "viewport": "desktop",
+        "visible": [
+          "示例输入、处理和结果"
+        ],
+        "controls": [
+          "了解接入条件"
+        ],
+        "primaryEntity": "能力示例",
+        "firstViewport": [
+          "示例输入、处理和结果"
+        ],
+        "success": "可辨认示例输入、处理和结果，可找到「了解接入条件」。"
+      },
+      {
+        "state": "example",
+        "viewport": "mobile",
+        "visible": [
+          "示例输入、处理和结果"
+        ],
+        "controls": [
+          "了解接入条件"
+        ],
+        "primaryEntity": "能力示例",
+        "firstViewport": [
+          "示例结果及用途"
+        ],
+        "success": "可辨认示例输入、处理和结果，可找到「了解接入条件」。"
+      },
+      {
+        "state": "contact",
+        "viewport": "desktop",
+        "visible": [
+          "接入条件及联系途径"
+        ],
+        "controls": [
+          "返回示例"
+        ],
+        "primaryEntity": "下一步联系",
+        "firstViewport": [
+          "接入条件及联系途径"
+        ],
+        "success": "可辨认接入条件及联系途径，可找到「返回示例」。"
+      },
+      {
+        "state": "contact",
+        "viewport": "mobile",
+        "visible": [
+          "接入条件及联系途径"
+        ],
+        "controls": [
+          "返回示例"
+        ],
+        "primaryEntity": "下一步联系",
+        "firstViewport": [
+          "下一步入口"
+        ],
+        "success": "可辨认接入条件及联系途径，可找到「返回示例」。"
+      }
+    ],
+    "journey": [
+      {
+        "operation": "click",
+        "value": "",
+        "requireChange": true,
+        "opener": null,
+        "id": "open-example",
+        "action": "查看示例",
+        "state": "example-result",
+        "contains": "示例结果",
+        "result": "展示示例输入与输出"
+      }
+    ],
+    "brandConsistency": "在品牌明确前保持同一文字层级与产品称谓。",
+    "accessibility": "正文清晰，使用键盘可完成主要操作，反馈有文字说明。",
+    "responsive": "用途、示例、下一步顺序阅读，示例可折叠。",
+    "antiPatterns": [
+      "虚构客户标识、收入图表和未经证实的量化承诺"
+    ],
+    "humanQuestions": [
+      "这种编辑式呈现是否符合尚待确认的品牌和购买者预期？"
+    ]
+  },
+  "provenance": {
+    "sceneStage": "scene",
+    "directorStage": "art-direction",
+    "adoptedKnowledgeIds": [],
+    "parentContractId": null,
+    "decisionSources": [
+      {
+        "path": "/experiencePlan/tasks",
+        "source": "scene",
+        "reference": "scene/dimensions/task (empty uses labelled director-inference)"
+      },
+      {
+        "path": "/experiencePlan/states",
+        "source": "art-director",
+        "reference": "example-walkthrough"
+      },
+      {
+        "path": "/experiencePlan/layouts",
+        "source": "art-director",
+        "reference": "example-walkthrough"
+      },
+      {
+        "path": "/artDirection",
+        "source": "art-director",
+        "reference": "example-walkthrough"
+      },
+      {
+        "path": "/designSystem",
+        "source": "art-director",
+        "reference": "example-walkthrough"
+      },
+      {
+        "path": "/evaluationPlan/checks",
+        "source": "art-director",
+        "reference": "example-walkthrough"
+      }
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "sourceId": "topread",
+    "sceneTags": [
+      "local-consumer"
+    ],
+    "versionHash": "93a562026abfde761cdd436c1d0140abbec0f09eabc4b0945900d02689f167b6",
+    "applicability": "居民浏览热门事项等明确排序的列表。",
+    "contraindications": "在按距离排序的列表里混入未解释的热度排名。",
+    "id": "vis-topread",
+    "kind": "VisualExemplar",
+    "title": "排名、名称与趋势按行对齐",
+    "pageState": "Top read 模块显示五条排行和底部更多入口。",
+    "visualHierarchy": "模块名先于条目，粗体标题、说明与下方小趋势图形成行内层级。",
+    "layoutGrammar": "排名在左，标题与说明居中，缩略图在右，同一外框包住整组。",
+    "typographyRhythm": "标题粗体允许换行，说明常规字重，数字独占一行。",
+    "colorRoles": "深色正文、青绿色统计数、蓝色末尾链接。",
+    "density": "五个项目的垂直节奏稳定，描述长度有所不同。",
+    "focalPoint": "每行粗体名称和左侧名次。",
+    "transferablePrinciples": "移动排行把名次与关键量固定对齐，为名称留出换行宽度。",
+    "copyingRestrictions": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+    "pixelInspectedBy": "Codex (visual inspection)",
+    "inspectedHash": "2c7b7d0ec28ac008d90d16da55f3940ec166fea8ec07f5f1e51bef8d86bccc30",
+    "viewportBasis": "screenshot-raster",
+    "capturedViewport": {
+      "width": 1889,
+      "height": 4252
+    },
+    "screenshotPathOrLink": "https://upload.wikimedia.org/wikipedia/commons/6/62/Android_Explore_Feed_Top_Read.png",
+    "humanReview": "pending",
+    "motionEvidence": "not-observed"
+  },
+  {
+    "sourceId": "topread",
+    "sceneTags": [
+      "local-consumer"
+    ],
+    "versionHash": "93a562026abfde761cdd436c1d0140abbec0f09eabc4b0945900d02689f167b6",
+    "applicability": "居民浏览热门事项等明确排序的列表。",
+    "contraindications": "在按距离排序的列表里混入未解释的热度排名。",
+    "id": "rule-topread",
+    "kind": "DesignRule",
+    "title": "应用建议 · 排名、名称与趋势按行对齐",
+    "topic": "排名、名称与趋势按行对齐",
+    "decision": "移动排行把名次与关键量固定对齐，为名称留出换行宽度。",
+    "positiveExample": "模块名先于条目，粗体标题、说明与下方小趋势图形成行内层级。",
+    "negativeExample": "在按距离排序的列表里混入未解释的热度排名。",
+    "observableCheck": "截取前三行仍能识别排名依据，长标题不会盖住统计量。",
+    "confidence": 0.65
+  }
+]

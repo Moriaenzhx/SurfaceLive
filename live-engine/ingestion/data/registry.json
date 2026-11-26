@@ -1,0 +1,152 @@
+[
+  {
+    "id": "gnucash",
+    "title": "GnuCash screenshot",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:GnuCash_screenshot.png",
+    "publisher": "Deeahbz / Remember the dot",
+    "sceneTags": [
+      "b2b-workbench"
+    ],
+    "rightsStatus": "analysis-permitted",
+    "licenseOrTerms": "GPL-2.0-or-later; retain local research copy only; third-party material and marks excluded from reuse.",
+    "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "rightsReviewedBy": "Codex (file licensing section)",
+    "rightsReviewedAt": "2026-11-20",
+    "screenshotUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/GnuCash_screenshot.png"
+  },
+  {
+    "id": "calc",
+    "title": "LibreOffice Calc 6.2 screenshot",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:LibreOffice_Calc_6.2_screenshot.png",
+    "publisher": "VulcanSphere / The Document Foundation and contributors",
+    "sceneTags": [
+      "b2b-workbench"
+    ],
+    "rightsStatus": "analysis-permitted",
+    "licenseOrTerms": "LGPL-2.1-or-later; retain local research copy only; third-party material and marks excluded from reuse.",
+    "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "rightsReviewedBy": "Codex (file licensing section)",
+    "rightsReviewedAt": "2026-11-20",
+    "screenshotUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/LibreOffice_Calc_6.2_screenshot.png"
+  },
+  {
+    "id": "grafana",
+    "title": "Grafana dashboard (2016)",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Grafana_dashboard_(2016).png",
+    "publisher": "Linux Screenshots (xmodulo)",
+    "sceneTags": [
+      "executive-dashboard"
+    ],
+    "rightsStatus": "analysis-permitted",
+    "licenseOrTerms": "CC BY 2.0 (screenshot); Apache-2.0 (software); retain local research copy only; third-party material and marks excluded from reuse.",
+    "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "rightsReviewedBy": "Codex (file licensing section)",
+    "rightsReviewedAt": "2026-11-20",
+    "screenshotUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Grafana_dashboard_(2016).png"
+  },
+  {
+    "id": "discovery",
+    "title": "Dashboard example",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Dashboard_example.png",
+    "publisher": "Ironholds",
+    "sceneTags": [
+      "executive-dashboard"
+    ],
+    "rightsStatus": "analysis-permitted",
+    "licenseOrTerms": "CC0-1.0; retain local research copy only; third-party material and marks excluded from reuse.",
+    "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "rightsReviewedBy": "Codex (file licensing section)",
+    "rightsReviewedAt": "2026-11-20",
+    "screenshotUrl": "https://upload.wikimedia.org/wikipedia/commons/0/06/Dashboard_example.png"
+  },
+  {
+    "id": "expense",
+    "title": "Gnucash-Expense-Piechart",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Gnucash-Expense-Piechart.png",
+    "publisher": "GnuCash contributors; Wikimedia Commons file history",
+    "sceneTags": [
+      "executive-dashboard"
+    ],
+    "rightsStatus": "analysis-permitted",
+    "licenseOrTerms": "GPL-2.0-or-later; retain local research copy only; third-party material and marks excluded from reuse.",
+    "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "rightsReviewedBy": "Codex (file licensing section)",
+    "rightsReviewedAt": "2026-11-20",
+    "screenshotUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Gnucash-Expense-Piechart.png"
+  },
+  {
+    "id": "nearby",
+    "title": "Nearby in Android",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Nearby_in_Android.png",
+    "publisher": "DBrant (WMF)",
+    "sceneTags": [
+      "local-consumer"
+    ],
+    "rightsStatus": "analysis-permitted",
+    "licenseOrTerms": "CC BY-SA 4.0; retain local research copy only; third-party material and marks excluded from reuse.",
+    "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "rightsReviewedBy": "Codex (file licensing section)",
+    "rightsReviewedAt": "2026-11-20",
+    "screenshotUrl": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Nearby_in_Android.png"
+  },
+  {
+    "id": "drawer",
+    "title": "Wikipedia Android app menu open",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Wikipedia_Android_app_menu_open.png",
+    "publisher": "Jack Phoenix",
+    "sceneTags": [
+      "local-consumer"
+    ],
+    "rightsStatus": "analysis-permitted",
+    "licenseOrTerms": "PD-self (screenshot); retain local research copy only; third-party material and marks excluded from reuse.",
+    "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "rightsReviewedBy": "Codex (file licensing section)",
+    "rightsReviewedAt": "2026-11-20",
+    "screenshotUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Wikipedia_Android_app_menu_open.png"
+  },
+  {
+    "id": "topread",
+    "title": "Android Explore Feed Top Read",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Android_Explore_Feed_Top_Read.png",
+    "publisher": "HNordeen (WMF)",
+    "sceneTags": [
+      "local-consumer"
+    ],
+    "rightsStatus": "analysis-permitted",
+    "licenseOrTerms": "CC0-1.0 (screenshot contribution); retain local research copy only; third-party material and marks excluded from reuse.",
+    "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "rightsReviewedBy": "Codex (file licensing section)",
+    "rightsReviewedAt": "2026-11-20",
+    "screenshotUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/Android_Explore_Feed_Top_Read.png"
+  },
+  {
+    "id": "shotcut",
+    "title": "Shotcut screenshot",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Shotcut_screenshot.png",
+    "publisher": "Maupao70",
+    "sceneTags": [
+      "creative-editor"
+    ],
+    "rightsStatus": "analysis-permitted",
+    "licenseOrTerms": "CC BY-SA 4.0; retain local research copy only; third-party material and marks excluded from reuse.",
+    "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "rightsReviewedBy": "Codex (file licensing section)",
+    "rightsReviewedAt": "2026-11-20",
+    "screenshotUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Shotcut_screenshot.png"
+  },
+  {
+    "id": "audacity",
+    "title": "Audacity screenshot",
+    "canonicalUrl": "https://commons.wikimedia.org/wiki/File:Audacity_screenshot.png",
+    "publisher": "SF007 / Audacity contributors",
+    "sceneTags": [
+      "creative-editor"
+    ],
+    "rightsStatus": "analysis-permitted",
+    "licenseOrTerms": "GPL-2.0-or-later; retain local research copy only; third-party material and marks excluded from reuse.",
+    "termsUrl": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "rightsReviewedBy": "Codex (file licensing section)",
+    "rightsReviewedAt": "2026-11-20",
+    "screenshotUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Audacity_screenshot.png"
+  }
+]

@@ -1,0 +1,610 @@
+{
+  "schemaVersion": "1.0",
+  "id": "6cf71174-9bc0-46f5-86dd-48c0d3cc76e7",
+  "runId": "55d67fdb-6ad4-4a2c-a3cd-ab72791a23f4",
+  "directionId": "split-review",
+  "requirements": {
+    "brief": "招聘复核工作台\n为招聘顾问生成桌面端候选人复核工作台。\n核心能力：查看岗位需求；查看候选人及匹配证据；搜索、筛选和排序；查看搜索任务执行状态；人工复核结果；保留不同复核状态。\n需要体现 B 端产品的信息密度、层级、效率和专业感。",
+    "explicit": [
+      "保留不同复核状态",
+      "为招聘顾问生成桌面端候选人复核工作台。",
+      "查看岗位需求",
+      "查看候选人及匹配证据",
+      "搜索、筛选和排序",
+      "查看搜索任务执行状态",
+      "人工复核结果；保留不同复核状态",
+      "需要体现 B 端产品的信息密度、层级、效率和专业感。"
+    ],
+    "tokenLocks": [],
+    "host": [
+      "离线 HTML/CSS/JS，使用系统字体和本地资源。",
+      "主操作改变真实业务状态并给出可见反馈。",
+      "保留键盘操作和可见焦点，目标视口避免横向溢出，正文与底色对比度至少 4.5。"
+    ],
+    "uncertainties": [
+      "设计资料库缺少招聘复核专用索引，通用 B 端工作台标签无法直接定位岗位要求与候选人匹配证据的对照模式。",
+      "搜索、筛选和排序分别作用于当前岗位的候选人、某次搜索结果，还是跨岗位候选人库？",
+      "匹配证据有哪些类型，招聘顾问需要查看哪些原始材料或出处？",
+      "搜索任务有哪些执行状态，是否需要为失败或部分完成提供处理入口？",
+      "人工复核有哪些状态，状态归属候选人、岗位下的候选人，还是单次搜索结果？"
+    ],
+    "assumptions": [
+      "候选人列表与匹配证据并排展示，有助于招聘顾问连续复核。可在桌面端原型中让顾问连续复核多位候选人，记录完成时间、页面往返次数和证据遗漏。"
+    ]
+  },
+  "experiencePlan": {
+    "audience": [
+      {
+        "value": "招聘顾问",
+        "evidence": "为招聘顾问生成桌面端候选人复核工作台。",
+        "source": "user"
+      }
+    ],
+    "productGoals": [
+      {
+        "value": "B 端候选人复核工作台",
+        "evidence": "为招聘顾问生成桌面端候选人复核工作台。",
+        "source": "user"
+      }
+    ],
+    "pageGoal": "根据岗位要求逐条核实候选证据，保留缺口与人工结论。",
+    "tasks": [
+      {
+        "value": "查看岗位需求",
+        "evidence": "查看岗位需求",
+        "source": "user"
+      },
+      {
+        "value": "查看候选人及匹配证据",
+        "evidence": "查看候选人及匹配证据",
+        "source": "user"
+      },
+      {
+        "value": "搜索、筛选和排序",
+        "evidence": "搜索、筛选和排序",
+        "source": "user"
+      },
+      {
+        "value": "查看搜索任务执行状态",
+        "evidence": "查看搜索任务执行状态",
+        "source": "user"
+      },
+      {
+        "value": "人工复核结果并保留不同复核状态",
+        "evidence": "人工复核结果；保留不同复核状态",
+        "source": "user"
+      }
+    ],
+    "entities": [
+      "候选人与岗位要求",
+      "证据缺口",
+      "简历原文",
+      "复核结论"
+    ],
+    "informationArchitecture": "全局导航区分岗位与搜索任务。岗位页顶部提供岗位需求入口、当前搜索阶段和已完成数量。表格上方集中放置姓名搜索、复核状态筛选、结果数和清除入口，列头负责排序。表格主行展示关键匹配、主要缺口和复核状态。侧栏按岗位要求组织证据，逐项列出出处、原文和缺失情况。",
+    "states": [
+      {
+        "id": "initial",
+        "purpose": "找到待复核人选",
+        "priority": [
+          "候选人与岗位要求",
+          "证据缺口",
+          "简历原文",
+          "复核结论"
+        ],
+        "controls": [
+          "按姓名搜索"
+        ],
+        "taskEvidence": "查看候选人及匹配证据"
+      },
+      {
+        "id": "evidence",
+        "purpose": "确认所选人缺少哪项依据",
+        "priority": [
+          "证据缺口",
+          "候选人与岗位要求",
+          "简历原文",
+          "复核结论"
+        ],
+        "controls": [
+          "查看原文"
+        ],
+        "taskEvidence": "查看候选人及匹配证据"
+      },
+      {
+        "id": "source",
+        "purpose": "核对原文及出处",
+        "priority": [
+          "简历原文",
+          "候选人与岗位要求",
+          "证据缺口",
+          "复核结论"
+        ],
+        "controls": [
+          "标为需补证"
+        ],
+        "taskEvidence": "查看候选人及匹配证据"
+      },
+      {
+        "id": "reviewed",
+        "purpose": "确认人工状态",
+        "priority": [
+          "复核结论",
+          "候选人与岗位要求",
+          "证据缺口",
+          "简历原文"
+        ],
+        "controls": [
+          "返回名单"
+        ],
+        "taskEvidence": "人工复核结果；保留不同复核状态"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "initial",
+        "to": "evidence",
+        "action": "按姓名搜索"
+      },
+      {
+        "from": "evidence",
+        "to": "source",
+        "action": "查看原文"
+      },
+      {
+        "from": "source",
+        "to": "reviewed",
+        "action": "标为需补证"
+      }
+    ],
+    "layouts": {
+      "desktop": {
+        "structure": "候选列表与证据栏并排，主要缺口、出处、人工复核动作可并行查看。",
+        "order": [
+          "候选人与岗位要求",
+          "证据缺口",
+          "简历原文",
+          "复核结论"
+        ]
+      },
+      "mobile": {
+        "structure": "名单保留姓名和状态。点击人选进入逐条证据阅读，顶端保留人名与返回名单，原文靠近对应要求。",
+        "order": [
+          "候选人与岗位要求",
+          "证据缺口",
+          "简历原文",
+          "复核结论"
+        ]
+      }
+    },
+    "preservedFunctions": [
+      "查看岗位需求",
+      "查看候选人及匹配证据",
+      "搜索、筛选和排序",
+      "查看搜索任务执行状态",
+      "人工复核结果；保留不同复核状态"
+    ]
+  },
+  "artDirection": {
+    "concept": "候选表与证据侧栏",
+    "rationale": "适合按岗位连续核对多人的顾问。两份跨领域案例均缺少固定证据侧栏与人工复核提交同时出现的可迁移结构，因此此案的视觉引用留空。",
+    "selection": "选候选表与证据侧栏。顾问连续复核时会反复切换候选人、查看原文和保存结论。固定侧栏让证据区保持可预期的位置，打开原文也不会推动列表。代价是同屏比较列少于全宽表，因此首屏优先保留关键匹配、主要缺口和复核状态。建议用目标桌面窗口连续复核三位样例候选人，记录核对时间、页面往返和证据遗漏，验证双栏是否值得占用列表宽度。",
+    "composition": "左侧候选表负责找人和横向比较，右侧固定证据栏负责核对与提交。两区独立滚动，展开证据时保持候选表的列宽和滚动位置。",
+    "focalPoint": "右侧当前候选人的关键缺口与对应证据。左侧用行轮廓和选中标记稳住当前对象，侧栏底部固定复核状态控件。",
+    "typography": "18 px 半粗体用于当前候选人，14 px 半粗体用于岗位要求和缺口结论，13 px 正文字用于表格及证据正文，12 px 用于出处与日期。匹配依据和状态均用可读文字呈现。",
+    "interactionPath": "搜索林岚并点击姓名，右侧定位她的证据。点击「查看原文」就地展开，确认记录只覆盖项目协调后，点击「标为需补证」。左表保留当前排序和位置，可直接选择下一人。",
+    "motionDirection": "切换对象时原位刷新证据栏，减少动态时关闭过渡。",
+    "brandTone": "核对案卷的克制、明确",
+    "colorIntent": "墨蓝用于选中与操作，缺证同时用文字和边框标出。",
+    "surfaceTone": "light",
+    "headingScale": "larger",
+    "density": "压缩可比较的名单行，为原文与出处提供行距。",
+    "componentLanguage": "固定当前人选标识、要求证据对照、独立的复核操作区。",
+    "antiPatterns": [
+      "手机端缩小所有桌面列，或把匹配分当作复核结论"
+    ],
+    "caseDecisions": [
+      {
+        "id": "vis-calc",
+        "adopt": false,
+        "mechanism": "矩阵定位并未覆盖固定证据栏。",
+        "boundary": "不能从该跨域案例推导当前任务的操作流程。"
+      },
+      {
+        "id": "vis-gnucash",
+        "adopt": false,
+        "mechanism": "财务主从行未覆盖人选签核。",
+        "boundary": "不能从该跨域案例推导当前任务的操作流程。"
+      }
+    ],
+    "rules": [
+      {
+        "id": "HIE-003",
+        "instruction": "让候选人匹配度、关键缺口、下一步行动成为信息主轴；其次再展示基础资料。"
+      },
+      {
+        "id": "FRM-004",
+        "instruction": "复杂筛选要展示当前生效条件、结果数量和快速清除路径；批量操作显示作用范围。"
+      },
+      {
+        "id": "BRD-003",
+        "instruction": "专业工具的高级感来自稳健的信息密度、清晰的工作节奏、精确对齐和低噪音状态反馈。"
+      },
+      {
+        "id": "TBL-001",
+        "instruction": "结构化多字段记录优先用可排序、可扫描的表格；冻结关键列或提供明细侧栏，而非重复卡片装饰。"
+      },
+      {
+        "id": "LAY-004",
+        "instruction": "将全局导航、局部筛选、主要工作区分层；让主要任务占据稳定的视觉和交互空间。"
+      },
+      {
+        "id": "NAV-001",
+        "instruction": "全局模块切换与当前工作区的过滤/排序/视图切换使用不同位置和视觉权重。"
+      },
+      {
+        "id": "TBL-002",
+        "instruction": "可排序列明确升/降序状态，键盘与屏幕阅读器能感知排序结果。"
+      },
+      {
+        "id": "FDB-003",
+        "instruction": "异步 AI 任务必须可见当前阶段、已完成数量、暂停/恢复与可复核结果；结果不能凭动画冒充成功。"
+      }
+    ],
+    "preferences": [
+      {
+        "id": "USR-001",
+        "source": "bundled-guidance",
+        "instruction": "功能与视觉完整度优先；没有实际业务意义的装饰不得替代信息、工作流或状态。"
+      },
+      {
+        "id": "USR-004",
+        "source": "bundled-guidance",
+        "instruction": "提供有意义的多平台状态、真实候选人字段、异常反馈和可执行操作；样例数据必须有长短差异与边界情况。"
+      },
+      {
+        "id": "USR-005",
+        "source": "bundled-guidance",
+        "instruction": "要求有独特的比例、节奏和设计主张；以真人盲评胜率检验，不允许模型自封高级。"
+      },
+      {
+        "id": "USR-006",
+        "source": "bundled-guidance",
+        "instruction": "不要退化为静态画布或一张海报；保留交互状态、组件结构和可编译代码。"
+      }
+    ],
+    "evidenceGaps": [
+      "暂定搜索、筛选和排序作用于当前岗位候选人，人工复核状态按岗位与候选人组合持久化。样例状态为待复核、需补证、通过和不通过，实际枚举与跨搜索任务合并规则待确认。",
+      "样例以简历项目经历为证据，真实证据类型、原件权限和缺失出处的处理待确认。原型数据应覆盖不同长度的职位与证据、出处缺失和空结果。",
+      "搜索执行与人工复核使用独立的状态标签。搜索任务显示阶段、已完成数量及可复核结果，失败与部分完成各有文字反馈。暂停、恢复、重试与人工接管入口按后端支持的状态启用，实际能力待确认。",
+      "现有两个视觉案例只支持跨领域结构迁移，资料中缺少招聘复核专用像素案例、明确品牌规范和目标窗口尺寸。字阶是原型起点，窗口验证与真人盲评尚未执行。"
+    ]
+  },
+  "designSystem": {
+    "tokens": {
+      "color.brand.primary": "#264c64",
+      "color.surface.base": "#f9fbfd",
+      "color.text.primary": "#19232d",
+      "color.action.primary": "#164c70",
+      "type.family.body": "system-ui",
+      "type.size.body": "13px",
+      "type.size.heading": "18px",
+      "type.weight.body": "400",
+      "type.lineHeight.body": "1.55",
+      "space.component.md": "8px",
+      "radius.control": "3px",
+      "border.control": "1px solid #b3bdc5",
+      "shadow.surface": "none",
+      "motion.feedback": "80ms"
+    },
+    "iconLanguage": "来源展开与返回以文字配方向线",
+    "componentStates": "待核实、已匹配、需补证都有文字；所选与键盘焦点标记区分。",
+    "motion": "切换对象时原位刷新证据栏，减少动态时关闭过渡。",
+    "responsiveRule": "名单保留姓名和状态。点击人选进入逐条证据阅读，顶端保留人名与返回名单，原文靠近对应要求。",
+    "creativeFreedom": "在保留状态重心、用户要求和可操作性的前提下调整换行、控件细节与非锁定 Token。"
+  },
+  "evaluationPlan": {
+    "viewports": [
+      {
+        "device": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "device": "mobile",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "checks": [
+      {
+        "state": "initial",
+        "viewport": "desktop",
+        "visible": [
+          "岗位与当前候选名单"
+        ],
+        "controls": [
+          "按姓名搜索"
+        ],
+        "primaryEntity": "候选人与岗位要求",
+        "firstViewport": [
+          "岗位与当前候选名单"
+        ],
+        "success": "可辨认岗位与当前候选名单，可找到「按姓名搜索」。"
+      },
+      {
+        "state": "initial",
+        "viewport": "mobile",
+        "visible": [
+          "岗位与当前候选名单"
+        ],
+        "controls": [
+          "按姓名搜索"
+        ],
+        "primaryEntity": "候选人与岗位要求",
+        "firstViewport": [
+          "搜索字段与姓名"
+        ],
+        "success": "可辨认岗位与当前候选名单，可找到「按姓名搜索」。"
+      },
+      {
+        "state": "evidence",
+        "viewport": "desktop",
+        "visible": [
+          "姓名、独立带队待核实"
+        ],
+        "controls": [
+          "查看原文"
+        ],
+        "primaryEntity": "证据缺口",
+        "firstViewport": [
+          "姓名、独立带队待核实"
+        ],
+        "success": "可辨认姓名、独立带队待核实，可找到「查看原文」。"
+      },
+      {
+        "state": "evidence",
+        "viewport": "mobile",
+        "visible": [
+          "姓名、独立带队待核实"
+        ],
+        "controls": [
+          "查看原文"
+        ],
+        "primaryEntity": "证据缺口",
+        "firstViewport": [
+          "所选人及其主要缺口"
+        ],
+        "success": "可辨认姓名、独立带队待核实，可找到「查看原文」。"
+      },
+      {
+        "state": "source",
+        "viewport": "desktop",
+        "visible": [
+          "所选人、页码与引用原文"
+        ],
+        "controls": [
+          "标为需补证"
+        ],
+        "primaryEntity": "简历原文",
+        "firstViewport": [
+          "所选人、页码与引用原文"
+        ],
+        "success": "可辨认所选人、页码与引用原文，可找到「标为需补证」。"
+      },
+      {
+        "state": "source",
+        "viewport": "mobile",
+        "visible": [
+          "所选人、页码与引用原文"
+        ],
+        "controls": [
+          "标为需补证"
+        ],
+        "primaryEntity": "简历原文",
+        "firstViewport": [
+          "姓名与已展开的证据"
+        ],
+        "success": "可辨认所选人、页码与引用原文，可找到「标为需补证」。"
+      },
+      {
+        "state": "reviewed",
+        "viewport": "desktop",
+        "visible": [
+          "结论与更新后的名单状态"
+        ],
+        "controls": [
+          "返回名单"
+        ],
+        "primaryEntity": "复核结论",
+        "firstViewport": [
+          "结论与更新后的名单状态"
+        ],
+        "success": "可辨认结论与更新后的名单状态，可找到「返回名单」。"
+      },
+      {
+        "state": "reviewed",
+        "viewport": "mobile",
+        "visible": [
+          "结论与更新后的名单状态"
+        ],
+        "controls": [
+          "返回名单"
+        ],
+        "primaryEntity": "复核结论",
+        "firstViewport": [
+          "需补证反馈与返回入口"
+        ],
+        "success": "可辨认结论与更新后的名单状态，可找到「返回名单」。"
+      }
+    ],
+    "journey": [
+      {
+        "operation": "fill",
+        "value": "林岚",
+        "requireChange": false,
+        "opener": null,
+        "id": "candidate-search",
+        "action": "在当前岗位的「搜索候选人」输入框输入林岚",
+        "state": "search-results",
+        "contains": "1 位候选人",
+        "result": "示例数据中，列表收敛为林岚，主行显示「独立带队待核实」和「待复核」。"
+      },
+      {
+        "operation": "click",
+        "value": "",
+        "requireChange": false,
+        "opener": {
+          "id": "open-lin-lan",
+          "action": "点击候选结果中的姓名「林岚」，打开她的证据区"
+        },
+        "id": "view-evidence-source",
+        "action": "点击「独立带队」证据旁的「查看原文」",
+        "state": "evidence-source-open",
+        "contains": "负责跨部门项目协调",
+        "result": "示例证据展开简历项目经历的段落及出处。原文只描述协调职责，独立带队仍标为待核实。"
+      },
+      {
+        "operation": "click",
+        "value": "",
+        "requireChange": true,
+        "opener": null,
+        "id": "mark-needs-evidence",
+        "action": "点击当前候选人的「标为需补证」",
+        "state": "needs-evidence-saved",
+        "contains": "复核状态：需补证",
+        "result": "保存成功后，结果区内林岚的状态由「待复核」变为「需补证」。重新打开该岗位仍显示已保存状态。"
+      }
+    ],
+    "brandConsistency": "同一缺口状态在列表与证据页采用同一名称和标记。",
+    "accessibility": "正文清晰，使用键盘可完成主要操作，反馈有文字说明。",
+    "responsive": "名单保留姓名和状态。点击人选进入逐条证据阅读，顶端保留人名与返回名单，原文靠近对应要求。",
+    "antiPatterns": [
+      "手机端缩小所有桌面列，或把匹配分当作复核结论"
+    ],
+    "humanQuestions": [
+      "顾问能否辨认待核实的证据，且不会把评分看成录用决定？"
+    ]
+  },
+  "provenance": {
+    "sceneStage": "scene",
+    "directorStage": "art-direction",
+    "adoptedKnowledgeIds": [
+      "HIE-003",
+      "FRM-004",
+      "BRD-003",
+      "TBL-001",
+      "LAY-004",
+      "NAV-001",
+      "TBL-002",
+      "FDB-003",
+      "USR-001",
+      "USR-004",
+      "USR-005",
+      "USR-006"
+    ],
+    "parentContractId": null,
+    "decisionSources": [
+      {
+        "path": "/experiencePlan/tasks",
+        "source": "scene",
+        "reference": "scene/dimensions/task (empty uses labelled director-inference)"
+      },
+      {
+        "path": "/experiencePlan/states",
+        "source": "art-director",
+        "reference": "split-review"
+      },
+      {
+        "path": "/experiencePlan/layouts",
+        "source": "art-director",
+        "reference": "split-review"
+      },
+      {
+        "path": "/artDirection",
+        "source": "art-director",
+        "reference": "split-review"
+      },
+      {
+        "path": "/designSystem",
+        "source": "art-director",
+        "reference": "split-review"
+      },
+      {
+        "path": "/evaluationPlan/checks",
+        "source": "art-director",
+        "reference": "split-review"
+      },
+      {
+        "path": "/artDirection/rules/0",
+        "source": "knowledge-rule",
+        "reference": "HIE-003"
+      },
+      {
+        "path": "/artDirection/rules/1",
+        "source": "knowledge-rule",
+        "reference": "FRM-004"
+      },
+      {
+        "path": "/artDirection/rules/2",
+        "source": "knowledge-rule",
+        "reference": "BRD-003"
+      },
+      {
+        "path": "/artDirection/rules/3",
+        "source": "knowledge-rule",
+        "reference": "TBL-001"
+      },
+      {
+        "path": "/artDirection/rules/4",
+        "source": "knowledge-rule",
+        "reference": "LAY-004"
+      },
+      {
+        "path": "/artDirection/rules/5",
+        "source": "knowledge-rule",
+        "reference": "NAV-001"
+      },
+      {
+        "path": "/artDirection/rules/6",
+        "source": "knowledge-rule",
+        "reference": "TBL-002"
+      },
+      {
+        "path": "/artDirection/rules/7",
+        "source": "knowledge-rule",
+        "reference": "FDB-003"
+      },
+      {
+        "path": "/artDirection/caseDecisions/0",
+        "source": "visual-case",
+        "reference": "vis-calc"
+      },
+      {
+        "path": "/artDirection/caseDecisions/1",
+        "source": "visual-case",
+        "reference": "vis-gnucash"
+      },
+      {
+        "path": "/artDirection/preferences/0",
+        "source": "bundled-guidance",
+        "reference": "USR-001"
+      },
+      {
+        "path": "/artDirection/preferences/1",
+        "source": "bundled-guidance",
+        "reference": "USR-004"
+      },
+      {
+        "path": "/artDirection/preferences/2",
+        "source": "bundled-guidance",
+        "reference": "USR-005"
+      },
+      {
+        "path": "/artDirection/preferences/3",
+        "source": "bundled-guidance",
+        "reference": "USR-006"
+      }
+    ]
+  }
+}

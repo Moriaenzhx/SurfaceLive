@@ -1,0 +1,51 @@
+[
+  {
+    "sourceId": "nearby",
+    "sceneTags": [
+      "local-consumer"
+    ],
+    "versionHash": "199cd43d62a543024077292bf494309386b13301a6df36a8dfc4e6d1158fc256",
+    "applicability": "居民需要按近远甄别附近事项。",
+    "contraindications": "把距离藏在详情里，或给每行加同权重的宣传标签。",
+    "id": "vis-nearby",
+    "kind": "VisualExemplar",
+    "title": "距离与附近事项标题成对",
+    "pageState": "附近地点列表，五个地点完整可见。",
+    "visualHierarchy": "地点名最大，距离标签在名称下方，配图在左。",
+    "layoutGrammar": "左侧等宽缩略图列与右侧文本列形成连续行。",
+    "typographyRhythm": "较大的单行名称搭配短距离读数，行高稳定。",
+    "colorRoles": "白底黑字，灰底白字距离标签；图片带来局部色彩。",
+    "density": "一屏约五行，有细线和留白分组。",
+    "focalPoint": "地名与每行紧邻的距离。",
+    "transferablePrinciples": "在附近事项流固定距离的位置，使不同标题长度不打乱扫读。",
+    "copyingRestrictions": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+    "pixelInspectedBy": "Codex (visual inspection)",
+    "inspectedHash": "a8c97afca30c0bef97d56705baa5dd711e68010bc285952324f074f42fcb2727",
+    "viewportBasis": "screenshot-raster",
+    "capturedViewport": {
+      "width": 1080,
+      "height": 1920
+    },
+    "screenshotPathOrLink": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Nearby_in_Android.png",
+    "humanReview": "pending",
+    "motionEvidence": "not-observed"
+  },
+  {
+    "sourceId": "nearby",
+    "sceneTags": [
+      "local-consumer"
+    ],
+    "versionHash": "199cd43d62a543024077292bf494309386b13301a6df36a8dfc4e6d1158fc256",
+    "applicability": "居民需要按近远甄别附近事项。",
+    "contraindications": "把距离藏在详情里，或给每行加同权重的宣传标签。",
+    "id": "rule-nearby",
+    "kind": "DesignRule",
+    "title": "应用建议 · 距离与附近事项标题成对",
+    "topic": "距离与附近事项标题成对",
+    "decision": "在附近事项流固定距离的位置，使不同标题长度不打乱扫读。",
+    "positiveExample": "地点名最大，距离标签在名称下方，配图在左。",
+    "negativeExample": "把距离藏在详情里，或给每行加同权重的宣传标签。",
+    "observableCheck": "无需进入详情即可读出前三项的名称与距离。",
+    "confidence": 0.65
+  }
+]

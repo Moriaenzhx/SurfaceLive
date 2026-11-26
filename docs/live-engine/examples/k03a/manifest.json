@@ -1,0 +1,35 @@
+{
+  "kind": "offline-worked-examples",
+  "newModelCalls": 0,
+  "examples": [
+    {
+      "id": "zhishi",
+      "file": "zhishi.json",
+      "sha256": "1bb3984efb71b79c38d64fe67d0a927754edd3db843105a113022e62ae14fa53",
+      "prior": {
+        "file": "runs/K-01/zhishi/A-current/attempt/design-trace.json",
+        "sha256": "88500cd5fb87e0796b3f42e9b7f7fda7f461c69bd5de62a8140e75c6b43b4cdb",
+        "runId": "fb2d8957-9b85-423d-96e7-39c0fd5b2937"
+      },
+      "origin": "K-01 actual scene and selected direction; K-03A supplemental fields are authored examples"
+    },
+    {
+      "id": "recruiting",
+      "file": "recruiting.json",
+      "sha256": "a4cfd6a425e86c882f251d68a1aedb0e3f647d373309872f297b9770f250a714",
+      "prior": {
+        "file": "runs/K-01/recruiting/A-current/attempt/design-trace.json",
+        "sha256": "19eab7ae872c8896e8cbc84db712ccfbd72e95c02683496a6cd7533257dc6e10",
+        "runId": "643354e1-3b4c-4eea-bd51-90546aa9ed5e"
+      },
+      "origin": "K-01 actual scene and selected direction; K-03A supplemental fields are authored examples"
+    },
+    {
+      "id": "ambiguous",
+      "file": "ambiguous.json",
+      "sha256": "a7a50003e5ad6661a22bdb32e6b5762ee9d2d003b5be6e3c16ff73a2a2a60877",
+      "prior": null,
+      "origin": "Authored ambiguity example; no model or retrieval"
+    }
+  ]
+}

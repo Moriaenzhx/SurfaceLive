@@ -1,0 +1,8 @@
+[
+  {"id":"USR-001","scenes":["general"],"kind":"rejected-pattern","signal":"用户多次拒绝看起来像 AI Demo 的界面：泛用渐变、装饰卡片、虚假操作、看似漂亮但不能用。","directive":"功能与视觉完整度优先；没有实际业务意义的装饰不得替代信息、工作流或状态。","origin":"prior explicit user feedback"},
+  {"id":"USR-002","scenes":["local-consumer"],"kind":"rejected-pattern","signal":"邻里产品的泛用绿色配色和重复导航曾被明确拒绝。","directive":"依据邻里气质定义独有色彩语言；不要默认科技绿；首页不重复底部导航已有功能。","origin":"prior explicit user feedback"},
+  {"id":"USR-003","scenes":["executive-dashboard"],"kind":"positive-preference","signal":"老板驾驶舱希望有掌控全局感，视觉重心突出最重要的决策信息。","directive":"主视觉必须对应经营态势和真正重要的风险，不以等待老板处理的任务队列占据首屏。","origin":"prior explicit user feedback"},
+  {"id":"USR-004","scenes":["b2b-workbench"],"kind":"positive-preference","signal":"招聘 Agent 应是正式可销售的产品，而不只是静态界面展示。","directive":"提供有意义的多平台状态、真实候选人字段、异常反馈和可执行操作；样例数据必须有长短差异与边界情况。","origin":"prior explicit user feedback"},
+  {"id":"USR-005","scenes":["general"],"kind":"positive-preference","signal":"用户明确提出设计不仅要专业，还要有明显高于普通模板的审美。","directive":"要求有独特的比例、节奏和设计主张；以真人盲评胜率检验，不允许模型自封高级。","origin":"prior explicit user feedback"},
+  {"id":"USR-006","scenes":["general"],"kind":"product-requirement","signal":"核心产物为可运行交互前端；用户可自然语言或框选修改并导出不同框架。","directive":"不要退化为静态画布或一张海报；保留交互状态、组件结构和可编译代码。","origin":"prior explicit user feedback"}
+]

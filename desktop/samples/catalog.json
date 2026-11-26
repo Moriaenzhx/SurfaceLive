@@ -1,0 +1,22 @@
+[
+  {
+    "id": "sample",
+    "folder": "recruiting",
+    "title": "招聘复核工作台",
+    "description": "招聘顾问在候选人工作台比较匹配依据、筛选来源并逐人复核。",
+    "target": "desktop",
+    "agent": "codex",
+    "model": "gpt-6.2-sol",
+    "source": "recruiting-2026-11-20T03-10-19-725Z-765655/A2"
+  },
+  {
+    "id": "sample-cinema",
+    "folder": "cinema",
+    "title": "巷口放映 · 周末放映单",
+    "description": "给附近居民做一个手机周末放映单，列出三场虚构的社区电影。可以按日期筛选、查看剩余名额，并完成一次报名。",
+    "target": "mobile",
+    "agent": "codex",
+    "model": "gpt-6.2-sol",
+    "source": "desktop-live-xJlVXc/1e433825-328a-452f-85ce-1888df4981af"
+  }
+]

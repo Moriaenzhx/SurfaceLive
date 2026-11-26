@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SurfaceLive</title><link rel="stylesheet" href="studio.css"><link rel="stylesheet" href="editor.css"><link rel="stylesheet" href="settings.css"><script defer src="action-icons.js"></script><script defer src="studio.js"></script><script defer src="project-tabs.js"></script><script defer src="editor.js"></script><script defer src="settings.js"></script></head>
+<body>
+<header class="titlebar">
+  <div id="project-tabs" role="tablist" aria-label="已打开的作品"></div>
+  <button class="tool" id="new" aria-label="新增作品标签" title="新增作品标签"><i data-icon="plus"></i></button>
+  <div class="top-actions">
+    <button class="tool" id="settings" aria-label="工作台设置" title="设置" aria-haspopup="dialog" aria-expanded="false" aria-controls="settings-dialog"><i data-icon="gear"></i></button>
+    <div class="export-control"><button class="tool" id="export" aria-label="导出源码" aria-describedby="export-tip"><i data-icon="export"></i></button><span id="export-tip" role="tooltip">导出</span></div>
+  </div>
+</header>
+<div class="layout" id="project-workspace" role="tabpanel" aria-label="作品工作区">
+<aside class="library" id="conversation" aria-label="项目对话">
+  <div class="panel-head"><span class="rail-toggle-slot" id="conversation-toggle-slot"><button class="tool rail-toggle" id="toggle-left" aria-controls="conversation" aria-label="收起项目对话"><i data-icon="leftPanel"></i></button></span><h2>项目对话</h2>
+    <div class="history-control"><button class="tool" id="history-menu" aria-expanded="false" aria-controls="history-pop" aria-label="版本记录" title="版本记录"><i data-icon="history"></i></button>
+      <div id="history-pop" class="popover" hidden><h3>版本记录</h3><div id="versions"></div>
+        <section class="current" id="context" hidden><h3>版本检查</h3><div id="revision-info"></div></section><button id="open-version-folder"><i data-icon="folder"></i>打开当前版本文件夹</button></div>
+    </div>
+  </div>
+  <div class="rail-resize" role="separator" tabindex="0" aria-orientation="vertical" aria-label="调整对话面板宽度" data-rail="left"></div><div class="thread" id="thread"><section id="project-library" hidden><h3>打开已有作品</h3><div id="projects"></div></section><div id="thread-content"></div></div>
+  <div class="composer-area" id="compose">
+    <div id="progress" class="progress" hidden><div><span class="spinner"></span><strong id="phase"></strong><span id="elapsed"></span></div><button id="cancel">取消</button></div>
+    <button id="selection-context" hidden></button><div class="composer" id="drop-zone">
+      <div id="attachments"></div>
+      <div class="prompt-line"><textarea id="brief" aria-label="给 Agent 的消息" maxlength="4000" rows="1" placeholder="这个页面给谁用？要完成什么？"></textarea>
+        <button class="tool" id="generate" aria-label="发送消息" title="发送消息（⌘ / Ctrl + Enter）"><i data-icon="send"></i></button></div>
+      <input id="image-input" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden>
+    </div>
+    <div class="composer-bar"><div class="agent-zone"><button id="agent-trigger" aria-expanded="false" aria-controls="agent-pop"><span id="connection"></span><span id="agent-summary">Codex</span><i data-icon="chevron"></i></button>
+      <div id="agent-pop" class="popover" hidden><div class="pop-head"><h3>本机 Agent</h3><button class="tool" id="refresh" title="重新检测本机 CLI" aria-label="重新检测"><i data-icon="refresh"></i></button></div><div id="agent-list"></div>
+        <div class="model-controls"><span>模型</span><button id="model-picker" aria-expanded="false" aria-label="选择模型"><span></span><i data-icon="chevron"></i></button><div class="model-browser" id="model-browser" hidden><input id="model-search" aria-label="筛选模型" placeholder="搜索模型…" autocomplete="off"><div id="model-results"></div></div><input id="model" aria-label="自定义模型名称" placeholder="输入模型名称" maxlength="100" hidden>
+        <span class="effort-label">推理强度</span><div id="effort" aria-label="推理强度" role="group"></div></div></div></div>
+      <div class="tool-group" role="group" aria-label="对话参考">
+        <button class="tool" id="attach" title="添加参考图" aria-label="添加参考图"><i data-icon="attach"></i></button>
+        <button class="tool" id="capture" title="框选截图并加入对话" aria-label="框选截图" aria-pressed="false"><i data-icon="crop"></i></button>
+        <button class="tool" id="pick-chat" title="从预览中引用元素" aria-label="引用页面元素"><i data-icon="reference"></i></button>
+      </div></div>
+  </div>
+</aside>
+<main class="workspace">
+  <div class="workspace-toolbar">
+    <span class="rail-toggle-slot" id="left-edge"></span>
+    <div class="mode-tools" role="group" aria-label="页面操作模式">
+      <button id="mode-preview" title="与页面交互"><i data-icon="preview"></i>实时预览</button>
+      <button id="pick" title="选择并编辑页面元素" aria-label="选择元素"><i data-icon="select"></i>选择元素</button>
+    </div>
+    <div class="viewport-tools"><span id="dimensions"></span>
+    <div class="device-tabs" role="group" aria-label="预览终端">
+      <button data-view="desktop" title="桌面预览" aria-label="桌面预览"><i data-icon="desktop"></i></button>
+      <button data-view="tablet" title="平板预览" aria-label="平板预览"><i data-icon="tablet"></i></button>
+      <button data-view="mobile" title="手机预览" aria-label="手机预览"><i data-icon="mobile"></i></button>
+    </div><div class="zoom-control"><button id="zoom" aria-expanded="false" aria-controls="zoom-pop" title="预览缩放"><span id="zoom-label">适应窗口</span><i data-icon="chevron"></i></button><div id="zoom-pop" class="popover" hidden><button data-zoom="fit">适应窗口</button><button data-zoom="100">100% · 实际大小</button><form id="zoom-form"><label for="zoom-value">自定义</label><input id="zoom-value" type="number" min="10" max="300" step="any" required aria-label="自定义缩放百分比"><span>%</span><button type="submit">应用</button></form><button id="focus">专注预览</button></div></div></div>
+    <span class="rail-toggle-slot" id="right-edge"></span>
+  </div>
+  <div class="canvas" id="canvas">
+    <section class="blank" id="blank" hidden>
+      <h1 id="blank-title">等待页面预览</h1><p id="blank-description">在项目对话中描述需求，生成的页面会显示在这里。</p>
+      <button id="open-compose" hidden>打开项目对话</button>
+    </section>
+    <section id="preview-message" hidden role="status"><strong id="preview-message-title"></strong><p id="preview-detail"></p><button id="retry-preview" hidden>重新载入</button></section>
+    <div class="artboard" id="artboard">
+      <div id="frame-clip"><iframe id="preview" title="生成页面的交互预览" sandbox="allow-scripts allow-same-origin"></iframe><div id="crop-layer" hidden><div id="crop-box" hidden></div></div><div id="selected-outline" hidden></div><div id="pick-layer" hidden><div id="highlight" hidden><span></span></div></div></div></div>
+  </div>
+  <div class="notice" id="notice" role="status" hidden></div>
+  <footer class="canvas-footer"><span><b class="status-dot"></b><span id="canvas-status">交互预览</span></span><span id="save-state" role="status" hidden></span><span id="scale"></span></footer>
+</main>
+<aside class="inspector" id="inspector" aria-label="检查器">
+  <div class="rail-resize" role="separator" tabindex="0" aria-orientation="vertical" aria-label="调整检查器宽度" data-rail="right"></div><div class="inspector-tabs"><button data-tab="compose" aria-pressed="true">属性</button><button data-tab="evidence" aria-pressed="false">设计依据</button><span class="rail-toggle-slot" id="inspector-toggle-slot"><button class="tool rail-toggle" id="toggle-right" aria-controls="inspector" aria-label="展开检查器"><i data-icon="rightOff"></i></button></span></div>
+  <div class="inspector-body" id="properties">
+    <div id="page-properties">
+      <section class="property-section"><h3>页面</h3><div class="field-row"><label for="target">生成终端</label><select id="target"><option value="auto">自动判断</option><option value="desktop">桌面</option><option value="tablet">平板</option><option value="mobile">手机</option></select></div>
+      <div class="measurements" id="measurements" aria-label="当前视口尺寸"><span><b>W</b><strong id="page-width"></strong><small>px</small></span><span><b>H</b><strong id="page-height"></strong><small>px</small></span></div></section>
+      <section class="property-section select-intro" id="selection-help"><button id="start-pick" class="soft-button"><i data-icon="select"></i>选取页面元素</button></section></div>
+    <div id="element-properties" hidden><div class="property-heading"><div><small id="element-type"></small><h3 id="element-name"></h3></div><button class="tool" id="deselect" aria-label="取消选择" title="取消选择"><i data-icon="close"></i></button></div>
+      <div id="element-path" aria-label="元素层级"></div><div class="selection-actions"><button id="parent" class="soft-button" title="选择父元素">选父元素</button><button id="cite" class="soft-button"><i data-icon="reference"></i>加入对话</button><button id="capture-element" class="tool" title="截取当前元素并加入对话" aria-label="选区截图"><i data-icon="crop"></i></button></div>
+      <div id="style-fields"></div></div>
+    <div id="edit-actions" hidden><button id="save-edit">保存样式版本</button><button id="discard" title="撤销本次未保存的样式">撤销调整</button></div>
+  </div>
+  <div class="inspector-body evidence" id="evidence" hidden><h3>场景与参考</h3><p id="scene-summary"></p><div id="cards"></div></div>
+</aside></div>
+<dialog id="settings-dialog" aria-label="工作台设置">
+  <div class="settings-layout">
+    <aside class="settings-sidebar">
+      <label class="settings-search"><i data-icon="search"></i><input id="settings-search" type="search" aria-label="搜索设置" placeholder="搜索设置" autocomplete="off"></label>
+      <nav aria-label="设置分类">
+        <h3>设置</h3>
+        <button data-settings-page="general" aria-current="page"><i data-icon="sliders"></i>通用</button>
+        <button data-settings-page="agents"><i data-icon="bot"></i>智能体</button>
+        <h3>帮助</h3>
+        <button data-settings-page="keys"><i data-icon="keyboard"></i>键盘快捷键</button>
+      </nav>
+    </aside>
+    <main class="settings-content" id="settings-content">
+      <h1 id="settings-heading" tabindex="-1">通用</h1>
+      <section class="settings-section" data-section="general"><h2>外观</h2>
+        <div class="settings-row" data-keywords="主题 颜色 模式 亮色 黑色 theme">
+          <div><h3 id="theme-label">主题</h3><p>选择工作台的配色。</p></div>
+          <div class="setting-options" role="radiogroup" aria-labelledby="theme-label">
+            <label><input type="radio" name="theme" value="system"><i data-icon="desktop"></i>跟随系统</label>
+            <label><input type="radio" name="theme" value="light"><i data-icon="sun"></i>浅色</label>
+            <label><input type="radio" name="theme" value="dark"><i data-icon="moon"></i>深色</label>
+          </div>
+        </div>
+        <div class="settings-row" data-keywords="布局 侧栏 检查器 panel">
+          <div><h3 id="side-label">项目对话位置</h3><p>检查器位于对话的另一侧。</p></div>
+          <div class="setting-options" role="radiogroup" aria-labelledby="side-label">
+            <label><input type="radio" name="conversation-side" value="left"><i data-icon="leftOff"></i>左侧</label>
+            <label><input type="radio" name="conversation-side" value="right"><i data-icon="rightOff"></i>右侧</label>
+          </div>
+        </div>
+      </section>
+      <section class="settings-section" data-section="general"><h2>存储位置</h2>
+        <div class="settings-row" data-keywords="项目 文件夹 目录 前端 页面 生成 默认 磁盘 storage">
+          <div><h3>作品保存位置</h3><code class="storage-path" id="storage-root"></code><p id="disk-free"></p>
+            <p class="storage-note">更改后，新版本写入新位置。已有版本仍可从原目录打开。</p></div>
+          <div class="setting-actions"><button id="open-storage-root" aria-label="打开作品保存文件夹">打开</button><button id="change-storage">更改…</button></div>
+        </div>
+        <div class="settings-row" data-keywords="当前 页面 项目 文件夹 目录 版本 历史 源码 html css js">
+          <div><h3>当前版本源码</h3><p id="source-description"></p><code class="storage-path" id="storage-source"></code></div>
+          <div class="setting-actions"><button id="open-storage-source">打开当前版本</button></div>
+        </div>
+        <div class="settings-row" id="previous-row" data-keywords="历史 旧 原 文件夹 路径" hidden>
+          <details id="previous-locations"><summary>以前的保存位置</summary><div id="previous-folders"></div></details>
+        </div>
+        <p id="storage-feedback" role="status" hidden></p>
+      </section>
+      <section class="settings-section" data-section="general"><h2>关于</h2>
+        <div class="settings-row" data-keywords="软件 版本 SurfaceLive"><div><h3>SurfaceLive</h3><p id="about-version"></p></div></div>
+      </section>
+      <section class="settings-section" data-section="agents" hidden><h2>本机智能体</h2>
+        <div class="settings-row" data-keywords="Codex Claude Code CLI 刷新 连接 模型 检测">
+          <div><h3>命令行工具</h3><p>从对话输入框下方可选择 Agent、模型和推理强度。</p></div>
+          <div class="setting-actions"><button id="settings-refresh"><i data-icon="refresh"></i>重新检测</button></div>
+        </div>
+        <div class="settings-row" data-keywords="Codex CLI"><div><h3>Codex</h3></div><span class="agent-availability" id="settings-codex"></span></div>
+        <div class="settings-row" data-keywords="Claude Code CLI"><div><h3>Claude Code</h3></div><span class="agent-availability" id="settings-claude"></span></div>
+        <p id="agent-settings-feedback" role="status" hidden></p>
+      </section>
+      <section class="settings-section" data-section="keys" hidden><h2>工作台</h2>
+        <div class="settings-row" data-keywords="发送 对话 Enter"><h3>发送对话消息</h3><kbd id="send-shortcut"></kbd></div>
+        <div class="settings-row" data-keywords="取消 截图 选区 选择模式 关闭 设置"><h3>退出当前模式或关闭设置</h3><kbd>Esc</kbd></div>
+        <div class="settings-row" data-keywords="标签 方向键 左右"><div><h3>切换作品标签</h3><p>将键盘焦点移到顶部标签后使用。</p></div><span class="key-pair"><kbd>←</kbd><kbd>→</kbd></span></div>
+      </section>
+      <p id="settings-no-results" hidden>没有找到匹配的设置。</p>
+    </main>
+    <button class="tool" id="close-settings" aria-label="关闭设置" title="关闭设置"><i data-icon="close"></i></button>
+  </div>
+</dialog></body></html>

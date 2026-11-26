@@ -1,0 +1,51 @@
+[
+  {
+    "sourceId": "discovery",
+    "sceneTags": [
+      "executive-dashboard"
+    ],
+    "versionHash": "31db90f1ce49cb7698d2a0d1e3c4c8160fdda1f733452894645b0fb6585c37c0",
+    "applicability": "经营驾驶舱需追查指标变化的依据。",
+    "contraindications": "用醒目总量挤走更重要的异常，也不要把多条曲线当作因果证据。",
+    "id": "vis-discovery",
+    "kind": "VisualExemplar",
+    "title": "指标趋势与统计口径同页",
+    "pageState": "桌面搜索事件概览含日报数字、日期趋势和口径说明。",
+    "visualHierarchy": "三个醒目总量下方是一张跨列趋势图，说明段落按主题排列。",
+    "layoutGrammar": "左栏选平台，上方指标横排，主图下方依次说明事件类型、趋势和中断。",
+    "typographyRhythm": "大号白色数字与小标签相配，说明区标题大于正文。",
+    "colorRoles": "亮绿突出总量，折线用不同颜色，背景浅灰。",
+    "density": "图表占主区域，说明以小字号集中在图下。",
+    "focalPoint": "三个总量与其下共同日期轴。",
+    "transferablePrinciples": "对易误读的趋势，在图表附近放统计口径与数据中断说明。",
+    "copyingRestrictions": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+    "pixelInspectedBy": "Codex (visual inspection)",
+    "inspectedHash": "f395d55f66cc0785188c7d5279670c6e6c062bf26c1aceb09721207d3459b479",
+    "viewportBasis": "screenshot-raster",
+    "capturedViewport": {
+      "width": 1920,
+      "height": 1093
+    },
+    "screenshotPathOrLink": "https://upload.wikimedia.org/wikipedia/commons/0/06/Dashboard_example.png",
+    "humanReview": "pending",
+    "motionEvidence": "not-observed"
+  },
+  {
+    "sourceId": "discovery",
+    "sceneTags": [
+      "executive-dashboard"
+    ],
+    "versionHash": "31db90f1ce49cb7698d2a0d1e3c4c8160fdda1f733452894645b0fb6585c37c0",
+    "applicability": "经营驾驶舱需追查指标变化的依据。",
+    "contraindications": "用醒目总量挤走更重要的异常，也不要把多条曲线当作因果证据。",
+    "id": "rule-discovery",
+    "kind": "DesignRule",
+    "title": "应用建议 · 指标趋势与统计口径同页",
+    "topic": "指标趋势与统计口径同页",
+    "decision": "对易误读的趋势，在图表附近放统计口径与数据中断说明。",
+    "positiveExample": "三个醒目总量下方是一张跨列趋势图，说明段落按主题排列。",
+    "negativeExample": "用醒目总量挤走更重要的异常，也不要把多条曲线当作因果证据。",
+    "observableCheck": "能在同页指出指标口径、日期范围和已知数据缺口。",
+    "confidence": 0.65
+  }
+]

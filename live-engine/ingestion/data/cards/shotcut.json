@@ -1,0 +1,51 @@
+[
+  {
+    "sourceId": "shotcut",
+    "sceneTags": [
+      "creative-editor"
+    ],
+    "versionHash": "12117a5e45b42fb2913db8b6e3919434fea0605b7d7b2dada105654541370486",
+    "applicability": "视频、音频等存在同步时间轴的编辑器。",
+    "contraindications": "将有时间含义的轨道移植到普通业务列表。",
+    "id": "vis-shotcut",
+    "kind": "VisualExemplar",
+    "title": "预览与多轨时间尺度",
+    "pageState": "剪辑项目含素材列表、画面预览和三条轨道。",
+    "visualHierarchy": "教堂预览的暖色与下方蓝色轨道构成两处重心。",
+    "layoutGrammar": "上半部分并列素材、预览和最近记录，下面的时间标尺贯穿多轨。",
+    "typographyRhythm": "小字服务于素材名与刻度；作品内叠字不同于工具文字。",
+    "colorRoles": "界面深灰，轨道蓝色，选中轨有轮廓强调。",
+    "density": "每条轨道沿共同时间轴，列表与工具栏较密。",
+    "focalPoint": "中央预览及其下方的轨道起点。",
+    "transferablePrinciples": "时间型编辑任务让不同轨道共享横向标尺，作品预览保留独立视觉空间。",
+    "copyingRestrictions": "仅迁移信息组织。保留出处，勿复制其中的图标、影像、标志、文案和整页布局。",
+    "pixelInspectedBy": "Codex (visual inspection)",
+    "inspectedHash": "f80d1e75af8a2db2ca9bba81b6877da802cbbd435d2356eef4f98646e7cbd554",
+    "viewportBasis": "screenshot-raster",
+    "capturedViewport": {
+      "width": 1292,
+      "height": 732
+    },
+    "screenshotPathOrLink": "https://upload.wikimedia.org/wikipedia/commons/9/94/Shotcut_screenshot.png",
+    "humanReview": "pending",
+    "motionEvidence": "not-observed"
+  },
+  {
+    "sourceId": "shotcut",
+    "sceneTags": [
+      "creative-editor"
+    ],
+    "versionHash": "12117a5e45b42fb2913db8b6e3919434fea0605b7d7b2dada105654541370486",
+    "applicability": "视频、音频等存在同步时间轴的编辑器。",
+    "contraindications": "将有时间含义的轨道移植到普通业务列表。",
+    "id": "rule-shotcut",
+    "kind": "DesignRule",
+    "title": "应用建议 · 预览与多轨时间尺度",
+    "topic": "预览与多轨时间尺度",
+    "decision": "时间型编辑任务让不同轨道共享横向标尺，作品预览保留独立视觉空间。",
+    "positiveExample": "教堂预览的暖色与下方蓝色轨道构成两处重心。",
+    "negativeExample": "将有时间含义的轨道移植到普通业务列表。",
+    "observableCheck": "跨轨能对齐同一时刻，并能分辨作品文本与工具标签。",
+    "confidence": 0.65
+  }
+]

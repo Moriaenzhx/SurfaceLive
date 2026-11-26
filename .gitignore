@@ -1,0 +1,14 @@
+node_modules/
+runs/*
+!runs/.gitkeep
+.DS_Store
+*.log
+
+live-engine/ingestion/.research/
+
+/build/
+/dist/
+
+# Local desktop acceptance captures, logs, and workspace backups.
+/docs/workbench-*/**
+!/docs/workbench-*/README.md

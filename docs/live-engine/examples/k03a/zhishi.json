@@ -1,0 +1,659 @@
+{
+  "schemaVersion": "1.0",
+  "id": "a4cfa90c-65c2-419f-8b6e-b8c3e5e12e1f",
+  "runId": "84c0b523-1f86-4ff3-83c0-b04bc9f77c73",
+  "directionId": "candidate-list",
+  "requirements": {
+    "brief": "知时 · 传统文化移动应用\n设计一款基于用户输入的八字、事项和时间范围，提供传统民俗择时参考的移动端应用。\n核心能力：输入或维护基础资料；选择事项类型；选择时间范围；查看候选时段；查看推荐理由；保存或比较结果。\n要求界面具有优秀的中文排版、独立视觉语言、清晰的任务路径和真实交互。不得将民俗推断包装成有科学保证的预测。不要强制采用国风绿金、山水、印章等常见视觉模板。",
+    "explicit": [
+      "不得将民俗推断包装成有科学保证的预测",
+      "不要强制采用国风绿金、山水、印章等常见视觉模板",
+      "设计一款基于用户输入的八字、事项和时间范围，提供传统民俗择时参考的移动端应用。",
+      "输入或维护基础资料",
+      "选择事项类型；选择时间范围",
+      "查看候选时段；查看推荐理由",
+      "保存或比较结果",
+      "要求界面具有优秀的中文排版、独立视觉语言、清晰的任务路径和真实交互。",
+      "提供传统民俗择时参考的移动端应用",
+      "知时 · 传统文化移动应用",
+      "不得将民俗推断包装成有科学保证的预测。",
+      "不要强制采用国风绿金、山水、印章等常见视觉模板。"
+    ],
+    "tokenLocks": [],
+    "host": [
+      "离线 HTML/CSS/JS，使用系统字体和本地资源。",
+      "主操作改变真实业务状态并给出可见反馈。",
+      "保留键盘操作和可见焦点，目标视口避免横向溢出，正文与底色对比度至少 4.5。"
+    ],
+    "uncertainties": [
+      "现有资料库标签缺少传统民俗择时参考类索引。是否有覆盖条件输入、候选时段解释与比较的专项设计资料？",
+      "目标用户熟悉哪些八字与择时术语？主要为自己安排事项，还是也会为他人查询？",
+      "八字由用户直接输入，还是由出生资料换算？若涉及换算，采用哪些历法、时区和规则？",
+      "首版支持哪些事项类型？时间范围和候选时段分别采用什么粒度？",
+      "候选时段依据哪些民俗规则生成和排序？推荐理由需要展示到什么程度，无候选时如何反馈？",
+      "保存与比较是分别支持的两项能力，还是首版可择一实现？保存后的结果需在哪些场景中访问？",
+      "宿主是原生应用、移动网页还是小程序？"
+    ],
+    "assumptions": [
+      "假设候选结果先展示时段和一句推荐理由，点开后查看详细依据，可以帮助用户筛选和比较。用移动端原型验证用户能否选出两个候选时段、说清选择理由，并正确理解结果属于民俗参考。"
+    ]
+  },
+  "experiencePlan": {
+    "audience": [
+      {
+        "value": "有具体事项需要安排，希望参考传统民俗选择时段的用户",
+        "evidence": "设计一款基于用户输入的八字、事项和时间范围，提供传统民俗择时参考的移动端应用。",
+        "source": "scene-inference"
+      }
+    ],
+    "productGoals": [
+      {
+        "value": "面向传统民俗择时的移动参考工具",
+        "evidence": "设计一款基于用户输入的八字、事项和时间范围，提供传统民俗择时参考的移动端应用。",
+        "source": "user"
+      }
+    ],
+    "pageGoal": "依事项找出可安排的时段，知道参考依据，并能回读已保存的选择。",
+    "tasks": [
+      {
+        "value": "输入或维护基础资料",
+        "evidence": "输入或维护基础资料",
+        "source": "user"
+      },
+      {
+        "value": "设定事项类型和时间范围",
+        "evidence": "选择事项类型；选择时间范围",
+        "source": "user"
+      },
+      {
+        "value": "查看候选时段和推荐理由",
+        "evidence": "查看候选时段；查看推荐理由",
+        "source": "user"
+      },
+      {
+        "value": "保存或比较结果",
+        "evidence": "保存或比较结果",
+        "source": "user"
+      }
+    ],
+    "entities": [
+      "事项与日期条件",
+      "候选时段",
+      "民俗理由",
+      "已保存的时段"
+    ],
+    "informationArchitecture": "查询页可维护八字资料、选择事项和日期范围。结果页保留可编辑的条件摘要，每行依次呈现时段、一句理由和详情入口。已保存结果可从结果页打开。",
+    "states": [
+      {
+        "id": "initial",
+        "purpose": "准备查询",
+        "priority": [
+          "事项与日期条件",
+          "候选时段",
+          "民俗理由",
+          "已保存的时段"
+        ],
+        "controls": [
+          "查看候选时段"
+        ],
+        "taskEvidence": "选择事项类型；选择时间范围"
+      },
+      {
+        "id": "submitted",
+        "purpose": "已提交的条件可辨认",
+        "priority": [
+          "事项与日期条件",
+          "候选时段",
+          "民俗理由",
+          "已保存的时段"
+        ],
+        "controls": [
+          "编辑条件"
+        ],
+        "taskEvidence": "选择事项类型；选择时间范围"
+      },
+      {
+        "id": "results",
+        "purpose": "按日期比较时段",
+        "priority": [
+          "候选时段",
+          "事项与日期条件",
+          "民俗理由",
+          "已保存的时段"
+        ],
+        "controls": [
+          "查看理由"
+        ],
+        "taskEvidence": "查看候选时段；查看推荐理由"
+      },
+      {
+        "id": "reason",
+        "purpose": "核对解释边界",
+        "priority": [
+          "民俗理由",
+          "事项与日期条件",
+          "候选时段",
+          "已保存的时段"
+        ],
+        "controls": [
+          "保存时段"
+        ],
+        "taskEvidence": "查看候选时段；查看推荐理由"
+      },
+      {
+        "id": "saved",
+        "purpose": "从保存项认回原选择",
+        "priority": [
+          "已保存的时段",
+          "事项与日期条件",
+          "候选时段",
+          "民俗理由"
+        ],
+        "controls": [
+          "查看已保存"
+        ],
+        "taskEvidence": "保存或比较结果"
+      }
+    ],
+    "transitions": [
+      {
+        "from": "initial",
+        "to": "submitted",
+        "action": "查看候选时段"
+      },
+      {
+        "from": "submitted",
+        "to": "results",
+        "action": "编辑条件"
+      },
+      {
+        "from": "results",
+        "to": "reason",
+        "action": "查看理由"
+      },
+      {
+        "from": "reason",
+        "to": "saved",
+        "action": "保存时段"
+      }
+    ],
+    "layouts": {
+      "desktop": {
+        "structure": "条件摘要靠近日期清单，时段和行内理由在同一阅读列。",
+        "order": [
+          "事项与日期条件",
+          "候选时段",
+          "民俗理由",
+          "已保存的时段"
+        ]
+      },
+      "mobile": {
+        "structure": "初始可展示标题，提交后收起条件为可编辑摘要。用日期分组替代完整表单，首个时段与理由入口同屏。",
+        "order": [
+          "事项与日期条件",
+          "候选时段",
+          "民俗理由",
+          "已保存的时段"
+        ]
+      }
+    },
+    "preservedFunctions": [
+      "输入或维护基础资料",
+      "选择事项类型；选择时间范围",
+      "查看候选时段；查看推荐理由",
+      "保存或比较结果"
+    ]
+  },
+  "artDirection": {
+    "concept": "时段清单",
+    "rationale": "适合已有具体事项、准备从数日内选出一个可安排时段的人。借用 vis-nearby 将判断信息紧邻每行主信息的机制，把距离的位置用来承载一句理由。范围限于行内邻近关系，原例的图片、界面资产和地理排序语义均留在原场景。出处见 [Nearby in Android](https://commons.wikimedia.org/wiki/File:Nearby_in_Android.png)。",
+    "selection": "首版选时段清单。三案服务同一主任务：用已录入的示例八字查询 11 月 24–26 日的搬家候选，读理由后保存 11 月 24 日 09:00–11:00。清单让时段、理由和保存反馈留在同一阅读位置，尤其适合范围只有几天、用户尚未锁定日期的查询。逐日查看更适合先按个人日程筛日期，对照页更适合已有两个可行时段时逐项权衡。清单承担长区间滚动的代价。三个方案均在结果和理由处标明「传统民俗参考」，并以真实表单状态处理缺项、服务失败及零候选。保存以实际写入成功为准，成功后显示「已保存」。",
+    "composition": "条件摘要置顶，候选按日期分组纵向排列，理由在原行展开。以直角边界、对齐的时间列和组间留白形成阅读节奏。",
+    "focalPoint": "结果首屏以候选时段为视觉中心。日期负责分组，理由紧随时段，保存按钮在展开详情后出现。",
+    "typography": "页题 24/700/32，日期组题 16/600/24，时段 22/650/28，理由正文 16/400/26，操作标签 14/600/20，民俗参考注释 13/400/20。数字采用等宽字形，中文理由自然换行。数值依次为字号、字重和行高，尺寸以 px 为基准。",
+    "interactionPath": "使用已录入的示例八字，查询示例事项「搬家」及示例日期范围 11 月 24–26 日。点 11 月 24 日 09:00–11:00 行的「查看理由」，原行显示「示例依据」及解释。点展开区内的「保存时段」，同一行更新为「已保存」，记录进入已保存列表。",
+    "motionDirection": "只展开当前理由。减少动态偏好下直接显示。",
+    "brandTone": "民俗日用手记，平实、可读",
+    "colorIntent": "暗紫指示当前动作，暖纸底留给时间与解释。",
+    "surfaceTone": "light",
+    "headingScale": "larger",
+    "density": "同日行紧凑，跨日留出可见的段落间距。",
+    "componentLanguage": "日期分隔线、等宽时段及原行展开的理由。",
+    "antiPatterns": [
+      "结果上方重复占据半屏的品牌插图"
+    ],
+    "caseDecisions": [
+      {
+        "id": "vis-drawer",
+        "adopt": false,
+        "mechanism": "此方向没有采用该案例的导航或排名结构。",
+        "boundary": "不能从该跨域案例推导当前任务的操作流程。"
+      },
+      {
+        "id": "vis-nearby",
+        "adopt": true,
+        "mechanism": "理由摘要邻近对应的时段行。",
+        "boundary": "仅迁移邻接关系，排除地理语义、示例资产和距离排序。"
+      },
+      {
+        "id": "vis-topread",
+        "adopt": false,
+        "mechanism": "此方向没有采用该案例的导航或排名结构。",
+        "boundary": "不能从该跨域案例推导当前任务的操作流程。"
+      }
+    ],
+    "rules": [
+      {
+        "id": "BRD-002",
+        "instruction": "给同一业务至少提出互相区别的两种排版与层级方案；差异须发生在结构与韵律，而不仅是换主题色。"
+      },
+      {
+        "id": "TYP-001",
+        "instruction": "定义角色化字阶：页面题、区块题、正文、标签、注释，每一种有固定字号/字重/行高。"
+      },
+      {
+        "id": "LAY-001",
+        "instruction": "用邻近关系划分信息组：组内更紧，组间更松；先用空间关系，必要时才用边框。"
+      },
+      {
+        "id": "RSP-001",
+        "instruction": "按内容的最低可用宽度设计断点；重排导航、图表、表格，而不仅是缩小组件。"
+      },
+      {
+        "id": "HIE-001",
+        "instruction": "先确定单一视觉主角，用尺寸、对比与位置表达；次级信息主动退让。"
+      },
+      {
+        "id": "FRM-001",
+        "instruction": "错误贴近输入字段并明确指出修复方式；复杂表单提供可导航的错误汇总。"
+      },
+      {
+        "id": "ACC-001",
+        "instruction": "键盘焦点须可见且与背景区分，不以鼠标专属 hover 承载关键功能。"
+      },
+      {
+        "id": "BRD-001",
+        "instruction": "先选定产品气质和目标用户，再固定字体表达、色彩关系、密度、图形语言、边界处理和运动方式。"
+      }
+    ],
+    "preferences": [
+      {
+        "id": "USR-001",
+        "source": "bundled-guidance",
+        "instruction": "功能与视觉完整度优先；没有实际业务意义的装饰不得替代信息、工作流或状态。"
+      },
+      {
+        "id": "USR-005",
+        "source": "bundled-guidance",
+        "instruction": "要求有独特的比例、节奏和设计主张；以真人盲评胜率检验，不允许模型自封高级。"
+      },
+      {
+        "id": "USR-006",
+        "source": "bundled-guidance",
+        "instruction": "不要退化为静态画布或一张海报；保留交互状态、组件结构和可编译代码。"
+      }
+    ],
+    "evidenceGaps": [
+      "输入中缺少同领域像素范例及该场景的已审核记录。逐日查看缺少按日期切换的参考，对照页缺少移动端逐字段对照的参考，两案的视觉案例字段留空。",
+      "「搬家」、日期、候选数量及时段均为明确标示的示例。待确认首版事项范围、时间粒度、八字直接录入或换算规则，以及可公开说明的民俗依据和候选排序规则。",
+      "待确认宿主、保存入口及保存范围。原型验收需要在目标手机宽度及 200% 文本缩放下完成查询、阅读理由和保存，并观察用户能否说清选择依据与民俗参考的边界。"
+    ]
+  },
+  "designSystem": {
+    "tokens": {
+      "color.brand.primary": "#493659",
+      "color.surface.base": "#fcfaf5",
+      "color.text.primary": "#281f2a",
+      "color.action.primary": "#503855",
+      "type.family.body": "system-ui",
+      "type.size.body": "16px",
+      "type.size.heading": "24px",
+      "type.weight.body": "400",
+      "type.lineHeight.body": "1.625",
+      "space.component.md": "12px",
+      "radius.control": "0",
+      "border.control": "1px solid #c4b9bb",
+      "shadow.surface": "none",
+      "motion.feedback": "120ms"
+    },
+    "iconLanguage": "编辑与保存用文字配小型线描图标",
+    "componentStates": "保存前、已保存、焦点可见。已保存同时写出文字。",
+    "motion": "只展开当前理由。减少动态偏好下直接显示。",
+    "responsiveRule": "初始可展示标题，提交后收起条件为可编辑摘要。用日期分组替代完整表单，首个时段与理由入口同屏。",
+    "creativeFreedom": "在保留状态重心、用户要求和可操作性的前提下调整换行、控件细节与非锁定 Token。"
+  },
+  "evaluationPlan": {
+    "viewports": [
+      {
+        "device": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "device": "mobile",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "checks": [
+      {
+        "state": "initial",
+        "viewport": "desktop",
+        "visible": [
+          "事项与起止日期"
+        ],
+        "controls": [
+          "查看候选时段"
+        ],
+        "primaryEntity": "事项与日期条件",
+        "firstViewport": [
+          "事项与起止日期"
+        ],
+        "success": "可辨认事项与起止日期，可找到「查看候选时段」。"
+      },
+      {
+        "state": "initial",
+        "viewport": "mobile",
+        "visible": [
+          "事项与起止日期"
+        ],
+        "controls": [
+          "查看候选时段"
+        ],
+        "primaryEntity": "事项与日期条件",
+        "firstViewport": [
+          "查看候选时段按钮"
+        ],
+        "success": "可辨认事项与起止日期，可找到「查看候选时段」。"
+      },
+      {
+        "state": "submitted",
+        "viewport": "desktop",
+        "visible": [
+          "出行、起止日期摘要"
+        ],
+        "controls": [
+          "编辑条件"
+        ],
+        "primaryEntity": "事项与日期条件",
+        "firstViewport": [
+          "出行、起止日期摘要"
+        ],
+        "success": "可辨认出行、起止日期摘要，可找到「编辑条件」。"
+      },
+      {
+        "state": "submitted",
+        "viewport": "mobile",
+        "visible": [
+          "出行、起止日期摘要"
+        ],
+        "controls": [
+          "编辑条件"
+        ],
+        "primaryEntity": "事项与日期条件",
+        "firstViewport": [
+          "已提交的日期范围"
+        ],
+        "success": "可辨认出行、起止日期摘要，可找到「编辑条件」。"
+      },
+      {
+        "state": "results",
+        "viewport": "desktop",
+        "visible": [
+          "日期组及首条完整时间范围"
+        ],
+        "controls": [
+          "查看理由"
+        ],
+        "primaryEntity": "候选时段",
+        "firstViewport": [
+          "日期组及首条完整时间范围"
+        ],
+        "success": "可辨认日期组及首条完整时间范围，可找到「查看理由」。"
+      },
+      {
+        "state": "results",
+        "viewport": "mobile",
+        "visible": [
+          "日期组及首条完整时间范围"
+        ],
+        "controls": [
+          "查看理由"
+        ],
+        "primaryEntity": "候选时段",
+        "firstViewport": [
+          "首条时段与理由入口"
+        ],
+        "success": "可辨认日期组及首条完整时间范围，可找到「查看理由」。"
+      },
+      {
+        "state": "reason",
+        "viewport": "desktop",
+        "visible": [
+          "所选时段及参考说明"
+        ],
+        "controls": [
+          "保存时段"
+        ],
+        "primaryEntity": "民俗理由",
+        "firstViewport": [
+          "所选时段及参考说明"
+        ],
+        "success": "可辨认所选时段及参考说明，可找到「保存时段」。"
+      },
+      {
+        "state": "reason",
+        "viewport": "mobile",
+        "visible": [
+          "所选时段及参考说明"
+        ],
+        "controls": [
+          "保存时段"
+        ],
+        "primaryEntity": "民俗理由",
+        "firstViewport": [
+          "解释与同一时段标题"
+        ],
+        "success": "可辨认所选时段及参考说明，可找到「保存时段」。"
+      },
+      {
+        "state": "saved",
+        "viewport": "desktop",
+        "visible": [
+          "已保存状态、原查询条件"
+        ],
+        "controls": [
+          "查看已保存"
+        ],
+        "primaryEntity": "已保存的时段",
+        "firstViewport": [
+          "已保存状态、原查询条件"
+        ],
+        "success": "可辨认已保存状态、原查询条件，可找到「查看已保存」。"
+      },
+      {
+        "state": "saved",
+        "viewport": "mobile",
+        "visible": [
+          "已保存状态、原查询条件"
+        ],
+        "controls": [
+          "查看已保存"
+        ],
+        "primaryEntity": "已保存的时段",
+        "firstViewport": [
+          "保存反馈与时段"
+        ],
+        "success": "可辨认已保存状态、原查询条件，可找到「查看已保存」。"
+      }
+    ],
+    "journey": [
+      {
+        "operation": "click",
+        "value": "",
+        "requireChange": false,
+        "opener": null,
+        "id": "query-times",
+        "action": "在已填入示例八字、已选「搬家」和 11 月 24–26 日的查询页，点击「查看候选时段」",
+        "state": "candidate-results",
+        "contains": "11 月 24 日 09:00–11:00",
+        "result": "结果页显示标注为示例的候选清单、当前查询条件和「传统民俗参考」。"
+      },
+      {
+        "operation": "click",
+        "value": "",
+        "requireChange": false,
+        "opener": null,
+        "id": "read-reason",
+        "action": "点击 11 月 24 日 09:00–11:00 行内的「查看理由」",
+        "state": "reason-expanded",
+        "contains": "示例依据",
+        "result": "该候选行原位展开理由和参考说明，并出现「保存时段」按钮。"
+      },
+      {
+        "operation": "click",
+        "value": "",
+        "requireChange": true,
+        "opener": {
+          "id": "read-reason",
+          "action": "点击 11 月 24 日 09:00–11:00 行内的「查看理由」以展开保存按钮"
+        },
+        "id": "save-time",
+        "action": "点击 11 月 24 日 09:00–11:00 展开区内的「保存时段」",
+        "state": "candidate-saved",
+        "contains": "已保存",
+        "result": "保存成功后，该候选行显示「已保存」，已保存列表新增同一时段及其查询条件。"
+      }
+    ],
+    "brandConsistency": "切换后保留时间字形和同一组识别色。",
+    "accessibility": "正文清晰，使用键盘可完成主要操作，反馈有文字说明。",
+    "responsive": "初始可展示标题，提交后收起条件为可编辑摘要。用日期分组替代完整表单，首个时段与理由入口同屏。",
+    "antiPatterns": [
+      "结果上方重复占据半屏的品牌插图"
+    ],
+    "humanQuestions": [
+      "这种中文行距是否支持跨日期扫读，同时传达民俗参考的边界？"
+    ]
+  },
+  "provenance": {
+    "sceneStage": "scene",
+    "directorStage": "art-direction",
+    "adoptedKnowledgeIds": [
+      "BRD-002",
+      "TYP-001",
+      "LAY-001",
+      "RSP-001",
+      "HIE-001",
+      "FRM-001",
+      "ACC-001",
+      "BRD-001",
+      "vis-nearby",
+      "USR-001",
+      "USR-005",
+      "USR-006"
+    ],
+    "parentContractId": null,
+    "decisionSources": [
+      {
+        "path": "/experiencePlan/tasks",
+        "source": "scene",
+        "reference": "scene/dimensions/task (empty uses labelled director-inference)"
+      },
+      {
+        "path": "/experiencePlan/states",
+        "source": "art-director",
+        "reference": "candidate-list"
+      },
+      {
+        "path": "/experiencePlan/layouts",
+        "source": "art-director",
+        "reference": "candidate-list"
+      },
+      {
+        "path": "/artDirection",
+        "source": "art-director",
+        "reference": "candidate-list"
+      },
+      {
+        "path": "/designSystem",
+        "source": "art-director",
+        "reference": "candidate-list"
+      },
+      {
+        "path": "/evaluationPlan/checks",
+        "source": "art-director",
+        "reference": "candidate-list"
+      },
+      {
+        "path": "/artDirection/rules/0",
+        "source": "knowledge-rule",
+        "reference": "BRD-002"
+      },
+      {
+        "path": "/artDirection/rules/1",
+        "source": "knowledge-rule",
+        "reference": "TYP-001"
+      },
+      {
+        "path": "/artDirection/rules/2",
+        "source": "knowledge-rule",
+        "reference": "LAY-001"
+      },
+      {
+        "path": "/artDirection/rules/3",
+        "source": "knowledge-rule",
+        "reference": "RSP-001"
+      },
+      {
+        "path": "/artDirection/rules/4",
+        "source": "knowledge-rule",
+        "reference": "HIE-001"
+      },
+      {
+        "path": "/artDirection/rules/5",
+        "source": "knowledge-rule",
+        "reference": "FRM-001"
+      },
+      {
+        "path": "/artDirection/rules/6",
+        "source": "knowledge-rule",
+        "reference": "ACC-001"
+      },
+      {
+        "path": "/artDirection/rules/7",
+        "source": "knowledge-rule",
+        "reference": "BRD-001"
+      },
+      {
+        "path": "/artDirection/caseDecisions/0",
+        "source": "visual-case",
+        "reference": "vis-drawer"
+      },
+      {
+        "path": "/artDirection/caseDecisions/1",
+        "source": "visual-case",
+        "reference": "vis-nearby"
+      },
+      {
+        "path": "/artDirection/caseDecisions/2",
+        "source": "visual-case",
+        "reference": "vis-topread"
+      },
+      {
+        "path": "/artDirection/preferences/0",
+        "source": "bundled-guidance",
+        "reference": "USR-001"
+      },
+      {
+        "path": "/artDirection/preferences/1",
+        "source": "bundled-guidance",
+        "reference": "USR-005"
+      },
+      {
+        "path": "/artDirection/preferences/2",
+        "source": "bundled-guidance",
+        "reference": "USR-006"
+      }
+    ]
+  }
+}
